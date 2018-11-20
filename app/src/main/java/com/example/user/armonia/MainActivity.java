@@ -17,8 +17,13 @@ public class MainActivity extends AppCompatActivity {
     private EditText id;
     private EditText password;
 
+<<<<<<< HEAD
 
     //hihello22
+=======
+    //hahahahahahahahahahahah
+    //hihello
+>>>>>>> beeb1fe58d44f4175a57aa3642c8bb1ef8236812
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
