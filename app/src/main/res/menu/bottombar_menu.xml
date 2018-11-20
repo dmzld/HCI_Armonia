@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuitem_bottombar_face"
+        android:icon="@drawable/ic_baseline_face_24px"
+        android:title="face"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menuitem_bottombar_home"
+        android:icon="@drawable/ic_baseline_home_24px"
+        android:title="home"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menuitem_bottombar_grade"
+        android:icon="@drawable/ic_baseline_grade_24px"
+        android:title="grade" />
+
+</menu>
