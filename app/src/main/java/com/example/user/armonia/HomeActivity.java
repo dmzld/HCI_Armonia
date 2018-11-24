@@ -37,21 +37,33 @@ public class HomeActivity extends AppCompatActivity {
                         // 어떤 메뉴 아이템이 터치되었는지 확인합니다.
                         switch (item.getItemId()) {
 
-                            case R.id.menuitem_bottombar_face:
+                            case R.id.menuitem_bottombar_myClub:
 
-                                message.setText("face 버튼을 눌렀습니다.");
+                                message.setText("내동아리 버튼을 눌렀습니다.");
+
+                                return true;
+
+                            case R.id.menuitem_bottombar_search:
+
+                                message.setText("검색 버튼을 눌렀습니다.");
 
                                 return true;
 
                             case R.id.menuitem_bottombar_home:
 
-                                message.setText("home 버튼을 눌렀습니다.");
+                                message.setText("홈 버튼을 눌렀습니다.");
 
                                 return true;
 
-                            case R.id.menuitem_bottombar_grade:
+                            case R.id.menuitem_bottombar_collaboBoard:
 
-                                message.setText("grade 버튼을 눌렀습니다.");
+                                message.setText("연합게시판 버튼을 눌렀습니다.");
+
+                                return true;
+
+                            case R.id.menuitem_bottombar_add:
+
+                                message.setText("기타 버튼을 눌렀습니다.");
 
                                 return true;
                         }

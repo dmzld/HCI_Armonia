@@ -3,19 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/menuitem_bottombar_face"
-        android:icon="@drawable/ic_baseline_face_24px"
-        android:title="face"
+        android:id="@+id/menuitem_bottombar_myClub"
+        android:icon="@drawable/ic_outline_face_24px"
+        android:title="내동아리"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/menuitem_bottombar_home"
-        android:icon="@drawable/ic_baseline_home_24px"
-        android:title="home"
+        android:id="@+id/menuitem_bottombar_search"
+        android:icon="@drawable/ic_outline_search_24px"
+        android:title="검색"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/menuitem_bottombar_grade"
-        android:icon="@drawable/ic_baseline_grade_24px"
-        android:title="grade" />
+        android:id="@+id/menuitem_bottombar_home"
+        android:icon="@drawable/ic_outline_home_24px"
+        android:title="홈"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menuitem_bottombar_collaboBoard"
+        android:icon="@drawable/ic_outline_forum_24px"
+        android:title="연합게시판"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menuitem_bottombar_add"
+        android:icon="@drawable/ic_outline_add_24px"
+        android:title="기타"
+        app:showAsAction="ifRoom" />
 
 </menu>
