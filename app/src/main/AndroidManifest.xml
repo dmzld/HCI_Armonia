@@ -17,6 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomeActivity" />
+        <activity android:name=".MakeClubActivity" />
+        <activity android:name=".MakeUnionActivity" />
+        <activity android:name=".MyInfoActivity" />
         <activity android:name=".RegistActivity"></activity>
     </application>
 
