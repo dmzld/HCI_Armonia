@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 public class SearchFrag extends Fragment {
 
-    public static AddFrag newInstance() { return new AddFrag(); }
+    public static SearchFrag newInstance() { return new SearchFrag(); }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/menuitem_bottombar_home"
+        android:icon="@drawable/ic_outline_home_24px"
+        android:title="홈"
+        app:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/menuitem_bottombar_myClub"
         android:icon="@drawable/ic_outline_face_24px"
         android:title="내 동아리"
@@ -12,11 +18,6 @@
         android:id="@+id/menuitem_bottombar_search"
         android:icon="@drawable/ic_outline_search_24px"
         android:title="검색"
-        app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/menuitem_bottombar_home"
-        android:icon="@drawable/ic_outline_home_24px"
-        android:title="홈"
         app:showAsAction="ifRoom" />
 
     <item
