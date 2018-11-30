@@ -5,7 +5,7 @@
     <item
         android:id="@+id/menuitem_bottombar_myClub"
         android:icon="@drawable/ic_outline_face_24px"
-        android:title="내동아리"
+        android:title="내 동아리"
         app:showAsAction="ifRoom" />
 
     <item
