@@ -17,7 +17,7 @@ public class AddFrag extends Fragment{
     public static AddFrag newInstance() {
         return new AddFrag();
     }
-    /*
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_add, container, false);
@@ -54,5 +54,5 @@ public class AddFrag extends Fragment{
         return view;
     }
 
-*/
+
 }

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "599840811492",
+    "firebase_url": "https://hci-armonia.firebaseio.com",
+    "project_id": "hci-armonia",
+    "storage_bucket": "hci-armonia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599840811492:android:6b49d217db18b186",
+        "android_client_info": {
+          "package_name": "com.example.user.armonia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599840811492-f5baqhv133t5hso54o0kfu4k9p4gk51m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.armonia",
+            "certificate_hash": "8873ab9c82f415423b4c7d94b86dacd06cf3b2ac"
+          }
+        },
+        {
+          "client_id": "599840811492-j80ikus2glv32gd1cn14d8loj0lm7oos.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqYpR6Rm6MyznQKQ0qmLIbU5yhoUvn8HY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599840811492-j80ikus2glv32gd1cn14d8loj0lm7oos.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -45,6 +45,13 @@ public class MyClubFrag extends Fragment {
 
         btnsearchClub = (Button)view.findViewById(R.id.btnSearchClub);
 
+        btnsearchClub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //버튼 눌렀을때 searchclub frag로 갈껀데 굳이 해야됨? 밑에 바로 있음
+            }
+        });
+
         return view; // 여기서 UI를 생성해서 View를 return
     }
 
