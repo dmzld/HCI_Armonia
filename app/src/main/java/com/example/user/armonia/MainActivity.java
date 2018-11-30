@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private CallbackManager mCallbackManager;
     SignInButton Google_Login;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

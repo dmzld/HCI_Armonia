@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:layout_marginLeft="150dp"
         android:text="동아리게시판" />
 
     <ListView
@@ -23,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="320dp"
+        android:layout_marginLeft="160dp"
         android:text="연합게시판" />
 
     <ListView

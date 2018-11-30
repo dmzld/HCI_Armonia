@@ -32,16 +32,22 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         auth = FirebaseAuth.getInstance();
       //  btnLogout = (Button)findViewById(R.id.btnLogout);
 
         fragmentManager = getSupportFragmentManager();
+
+
+        //하단에 버튼네비게이션 생성
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottomNavigationView_main_menu);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        //첫 화면에 home fragment 만들기
+        fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.add(R.id.fragment_container, HomeFrag.newInstance()).commit();
-        // 버튼 클릭시 사용되는 리스너를 구현합니다.
+
 
         /*btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +61,8 @@ public class HomeActivity extends AppCompatActivity {
             }
         });*/
     }
+
+    //버튼을 눌렀을때 fragment가 바뀌기 위한 장치
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -83,6 +91,8 @@ public class HomeActivity extends AppCompatActivity {
             }
             return false;
         }
+
+        //다른 버튼을 눌렀을때, fragment를 바꾸기 위한 함수
         private void replaceFragment(Fragment fragment) {
             fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
