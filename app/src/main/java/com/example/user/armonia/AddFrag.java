@@ -10,19 +10,20 @@ import android.content.Intent;
 
 public class AddFrag extends Fragment{
 
-    Button button_make_club;
+    private Button button_make_club;
     Button button_make_union;
     Button button_my_info;
 
     public static AddFrag newInstance() {
         return new AddFrag();
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_add, container, false);
-        button_make_club = view.findViewById(R.id.button_make_club);
-        button_make_union = view.findViewById(R.id.button_make_union);
-        button_my_info = view.findViewById(R.id.button_my_info);
+        button_make_club = (Button)view.findViewById(R.id.button_make_club);
+        button_make_union = (Button)view.findViewById(R.id.button_make_union);
+        button_my_info = (Button)view.findViewById(R.id.button_my_info);
 
         button_make_club.setOnClickListener(new View.OnClickListener()
         {
