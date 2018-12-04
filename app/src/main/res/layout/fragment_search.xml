@@ -79,6 +79,7 @@
     </HorizontalScrollView>
 
     <ListView
+        android:id="@+id/list_club"
         android:layout_width="match_parent"
         android:layout_height="337dp"
         android:layout_alignParentTop="true"

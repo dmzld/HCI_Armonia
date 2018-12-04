@@ -34,6 +34,11 @@
   </component>
 <<<<<<< HEAD
 <<<<<<< HEAD
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+=======
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="JDK" project-jdk-type="JavaSDK">
 >>>>>>> beeb1fe58d44f4175a57aa3642c8bb1ef8236812
 =======
@@ -41,6 +46,7 @@
 >>>>>>> 866e7acd19ca2262243147088868782b7422725e
 =======
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+>>>>>>> 70a21d7c702eb3de4fb3e390148c9ba1b7c426c0
 >>>>>>> fce0093ab471a32f7adcb81927986f5327a6d8be
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

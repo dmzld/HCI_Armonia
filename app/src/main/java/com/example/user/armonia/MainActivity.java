@@ -69,7 +69,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             @Override
             public void onClick(View v) {
 
-
+                //로그인 일단 주석
+/*
                 if( id.getText().toString().length() == 0 ) {
                     Toast.makeText(MainActivity.this, "ID을 입력하세요!", Toast.LENGTH_SHORT).show();
                     id.requestFocus();
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     password.requestFocus();
                     return;
                 }
-
+*/
                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                 startActivityForResult(intent,1000);
             }
