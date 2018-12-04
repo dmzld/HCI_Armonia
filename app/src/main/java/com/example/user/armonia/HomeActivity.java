@@ -22,6 +22,7 @@ import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
+    //AddFage, CollaboBoardFrag, HomeFrag, MyClubFrag, SearchFage를 갖는다
 
     private Fragment fragment;
     private FragmentManager fragmentManager;
