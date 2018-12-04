@@ -70,16 +70,17 @@ public class HomeActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
+
+                case R.id.menuitem_bottombar_home:
+                    replaceFragment(HomeFrag.newInstance());
+                    return true;
+
                 case R.id.menuitem_bottombar_myClub:
                     replaceFragment(MyClubFrag.newInstance());
                     return true;
 
                 case R.id.menuitem_bottombar_search:
                     replaceFragment(SearchFrag.newInstance());
-                    return true;
-
-                case R.id.menuitem_bottombar_home:
-                    replaceFragment(HomeFrag.newInstance());
                     return true;
 
                 case R.id.menuitem_bottombar_collaboBoard:
