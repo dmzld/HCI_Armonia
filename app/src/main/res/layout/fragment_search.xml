@@ -30,51 +30,51 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button34"
+                android:id="@+id/btnAll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="전체" />
 
             <Button
-                android:id="@+id/button33"
+                android:id="@+id/btnStudent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="학생회" />
 
             <Button
-                android:id="@+id/button32"
+                android:id="@+id/btnStudy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="학술" />
 
             <Button
-                android:id="@+id/button31"
+                android:id="@+id/btnSport"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="스포츠" />
 
             <Button
-                android:id="@+id/button30"
+                android:id="@+id/btnArt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="예술" />
 
             <Button
-                android:id="@+id/button28"
+                android:id="@+id/btnSocial"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="사회활동" />
 
             <Button
-                android:id="@+id/button27"
+                android:id="@+id/btnEtc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="기타" />
         </LinearLayout>
     </HorizontalScrollView>
 
