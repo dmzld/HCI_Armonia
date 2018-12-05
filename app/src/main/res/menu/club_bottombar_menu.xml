@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuitem_bottombar_home"
+        android:icon="@drawable/ic_outline_home_24px"
+        android:title="동아리홈"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menuitem_bottombar_notification_board"
+        android:icon="@drawable/ic_outline_notification_board_24px"
+        android:title="공지사항"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menuitem_bottombar_calendar"
+        android:icon="@drawable/ic_outline_calendar_24px"
+        android:title="일정"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menuitem_bottombar_album"
+        android:icon="@drawable/ic_outline_photo_album_24px"
+        android:title="앨범"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menuitem_bottombar_board"
+        android:icon="@drawable/ic_outline_forum_24px"
+        android:title="자유게시판"
+        app:showAsAction="ifRoom" />
+
+</menu>
