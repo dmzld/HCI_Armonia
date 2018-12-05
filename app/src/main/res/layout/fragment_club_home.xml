@@ -1,15 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ClubHomeFrag">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="ClubHome"
-        tools:text="ClubHome" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/clubImage"
+        android:layout_width="329dp"
+        android:layout_height="176dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="23dp"
+        android:src="@mipmap/ic_launcher_round" />
+
+    <Button
+        android:id="@+id/btnClubApply"
+        android:layout_width="72dp"
+        android:layout_height="36dp"
+        android:layout_above="@+id/clubCategory"
+        android:layout_alignEnd="@+id/clubImage"
+        android:text="신청->탈퇴" />
+
+    <TextView
+        android:id="@+id/clubCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/clubImage"
+        android:layout_below="@+id/clubName"
+        android:text="동아리카테고리" />
+
+    <TextView
+        android:id="@+id/clubName"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/clubImage"
+        android:layout_below="@+id/clubImage"
+        android:text="동아리이름"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/clubDesc"
+        android:layout_width="328dp"
+        android:layout_height="274dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:text="안녕하세요 우리는 볼랜드 어쩌구저쩌구 소개" />
+
+</RelativeLayout>
