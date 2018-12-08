@@ -1,4 +1,4 @@
-package com.example.user.armonia;
+package com.example.user.armonia.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
+
+import com.example.user.armonia.activity.ClubPageActivity;
+import com.example.user.armonia.list.ListClub;
+import com.example.user.armonia.R;
+import com.example.user.armonia.adapter.AdapterListClub;
 
 import java.util.ArrayList;
 

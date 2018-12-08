@@ -1,4 +1,4 @@
-package com.example.user.armonia;
+package com.example.user.armonia.list;
 
 // 동아리 게시판 리스티뷰에 나타나는 post
 public class ListPost {

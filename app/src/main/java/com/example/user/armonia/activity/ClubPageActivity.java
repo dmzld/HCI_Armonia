@@ -1,27 +1,20 @@
-package com.example.user.armonia;
+package com.example.user.armonia.activity;
 
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.MenuItem;
-import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.ArrayList;
+import com.example.user.armonia.R;
+import com.example.user.armonia.fragment.ClubAlbumFrag;
+import com.example.user.armonia.fragment.ClubBoardFrag;
+import com.example.user.armonia.fragment.ClubCalendarFrag;
+import com.example.user.armonia.fragment.ClubHomeFrag;
+import com.example.user.armonia.fragment.ClubNotiBoardFrag;
 
 public class ClubPageActivity extends AppCompatActivity {
 //ClubHomeFrag, NotiBoardFrag, ClubCalendarFrag, ClubAlbumFrag, ClubBoardFrag를 갖는다

@@ -1,4 +1,4 @@
-package com.example.user.armonia;
+package com.example.user.armonia.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.user.armonia.R;
 
 public class MakeUnionActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 

@@ -1,18 +1,18 @@
-package com.example.user.armonia;
+package com.example.user.armonia.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
+
+import com.example.user.armonia.list.ListPost;
+import com.example.user.armonia.R;
+import com.example.user.armonia.adapter.AdapterListPost;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ClubBoardFrag extends Fragment {
 
