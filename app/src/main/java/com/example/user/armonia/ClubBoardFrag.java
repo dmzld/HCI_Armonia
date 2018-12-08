@@ -36,6 +36,15 @@ public class ClubBoardFrag extends Fragment {
 
         listPostView = (ListView)view.findViewById(R.id.listPostView);
         postArrayList = new ArrayList<ListPost>();
+        btnWrite = (Button)view.findViewById(R.id.btnWrite);
+        btnWrite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(),WritePostActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         // 아직 DB 연동 안함
 
