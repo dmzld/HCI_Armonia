@@ -3,6 +3,7 @@
     package="com.example.user.armonia">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -18,11 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".MakeClubActivity" />
-        <activity android:name=".MakeUnionActivity" />
-        <activity android:name=".MyInfoActivity" />
-        <activity android:name=".RegistActivity" />
+        <activity android:name=".HomeActivity"/>
+        <activity android:name=".MakeClubActivity"/>
+        <activity android:name=".MakeUnionActivity"/>
+        <activity android:name=".MyInfoActivity"/>
+        <activity android:name=".RegistActivity"/>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -44,7 +45,9 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".ClubPageActivity"></activity>
+        <activity android:name=".ClubPageActivity" />
+        <activity
+            android:name=".MyInfoChangePassword"/>
     </application>
 
 </manifest>
