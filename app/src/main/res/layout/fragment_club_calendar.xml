@@ -1,15 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClubCalendarFrag">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    android:orientation="vertical"
+    >
+    <CalendarView
+        android:id="@+id/calendar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="ClubCal"
-        tools:text="ClubCal" />
+        android:layout_height="0px"
+        android:layout_weight="1"
+        />
+    <CalendarView
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:minDate="12/01/2018"
+        android:maxDate="12/31/2018"
+        android:focusedMonthDateColor="#ff0000"
+        android:unfocusedMonthDateColor="#0000ff"
+        android:selectedWeekBackgroundColor="#ffff00"
+        android:showWeekNumber="false"
+        android:weekSeparatorLineColor="#00ff00"
 
-</FrameLayout>
+        />
+
+
+
+</LinearLayout>

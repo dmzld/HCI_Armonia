@@ -1,4 +1,4 @@
-package com.example.user.armonia;
+package com.example.user.armonia.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,6 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.content.Intent;
+
+import com.example.user.armonia.activity.MakeClubActivity;
+import com.example.user.armonia.activity.MakeUnionActivity;
+import com.example.user.armonia.activity.MyInfoActivity;
+import com.example.user.armonia.R;
 
 public class AddFrag extends Fragment{
 

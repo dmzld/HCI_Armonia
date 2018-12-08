@@ -1,13 +1,15 @@
-package com.example.user.armonia;
+package com.example.user.armonia.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
+
+import com.example.user.armonia.list.ListPost;
+import com.example.user.armonia.R;
 
 import java.util.ArrayList;
 

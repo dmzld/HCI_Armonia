@@ -1,4 +1,4 @@
-package com.example.user.armonia;
+package com.example.user.armonia.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.user.armonia.R;
 
 public class MakeUnionActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
@@ -35,7 +37,7 @@ public class MakeUnionActivity extends AppCompatActivity implements AdapterView.
         spinner = (Spinner)findViewById(R.id.my_club);
         spinner2 = (Spinner)findViewById(R.id.add_union);
         btn_cancel = (Button)findViewById(R.id.btn_cancel);
-        btnAdd = (Button)findViewById(R.id.btnAdd);
+//        btnAdd = (Button)findViewById(R.id.btnAdd);
 
         //spinner에 나타날 인자(?)들
         item = new String[]{"선택하세요","볼랜드","한터","5분쉼표","학생회","안시"};
@@ -52,11 +54,11 @@ public class MakeUnionActivity extends AppCompatActivity implements AdapterView.
 
 
         //*****추가해야됨****
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-            }
-        });
+//        btnAdd.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//
+//            }
+//        });
 
         //취소를 눌렀을때 수행 기대값
         btn_cancel.setOnClickListener(new View.OnClickListener() {

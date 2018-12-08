@@ -1,4 +1,4 @@
-package com.example.user.armonia;
+package com.example.user.armonia.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import android.widget.SearchView;
+
+import com.example.user.armonia.list.ListClub;
+import com.example.user.armonia.R;
+import com.example.user.armonia.adapter.AdapterListClub;
 
 import java.util.ArrayList;
 
@@ -46,9 +50,6 @@ public class SearchFrag extends Fragment {
 
         adpaterListClub = new AdapterListClub(getActivity(),listClubArrayList);
         listClubView.setAdapter(adpaterListClub);
-
-
-
         return view;
 
     }

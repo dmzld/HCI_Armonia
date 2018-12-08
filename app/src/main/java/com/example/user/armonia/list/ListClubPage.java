@@ -1,4 +1,4 @@
-package com.example.user.armonia;
+package com.example.user.armonia.list;
 
 public class ListClubPage {
     private int image;//외부에서 이미지 가져올떄는 string으로 변경해야함
