@@ -1,5 +1,6 @@
 package com.example.user.armonia.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.user.armonia.activity.WritePostActivity;
 import com.example.user.armonia.list.ListPost;
 import com.example.user.armonia.R;
 import com.example.user.armonia.adapter.AdapterListPost;
