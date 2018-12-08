@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -28,6 +29,7 @@ public class ClubPageActivity extends AppCompatActivity {
     private Fragment fragmentClub;
     private FragmentManager fragmentClubManager;
     //private Button btnLogout;
+
 
 
     @Override
@@ -93,6 +95,7 @@ public class ClubPageActivity extends AppCompatActivity {
     ArrayList<ListClubPage> listClubPageArrayList;
 
 * listClubPageView = (ListView)findViewById(R.id.clubPageList);
+>>>>>>> 6dc7c217ae981e17a8f0beb9495e02d7003f03cc
         listClubPageArrayList = new ArrayList<ListClubPage>();
 
         //나중에 db에서 받아와서 add시켜야함 테스트용
