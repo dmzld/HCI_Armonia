@@ -45,7 +45,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.ClubPageActivity" />
-        <activity android:name=".activity.WritePostActivity"></activity>
+        <activity android:name=".activity.WritePostActivity" />
+        <activity android:name=".activity.PostActivity" />
+        <activity android:name=".activity.FreeBoardActivity"></activity>
     </application>
 
 </manifest>

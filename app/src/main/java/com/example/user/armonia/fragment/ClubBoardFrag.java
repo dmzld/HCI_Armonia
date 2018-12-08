@@ -6,9 +6,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.user.armonia.activity.PostActivity;
 import com.example.user.armonia.activity.WritePostActivity;
 import com.example.user.armonia.list.ListPost;
 import com.example.user.armonia.R;
@@ -36,7 +38,7 @@ public class ClubBoardFrag extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_club_board, container, false);
 
-        listPostView = (ListView)view.findViewById(R.id.listPostView);
+        listPostView = (ListView)view.findViewById(R.id.listClubBoardView);
         postArrayList = new ArrayList<ListPost>();
         btnWrite = (Button)view.findViewById(R.id.btnWrite);
         btnWrite.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +63,17 @@ public class ClubBoardFrag extends Fragment {
 
         adapterListPost = new AdapterListPost(getActivity(),postArrayList);
         listPostView.setAdapter(adapterListPost);
+
+        listPostView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Intent intent = new Intent(getActivity(), PostActivity.class);
+                //지금은 일단 그냥 클럽 액티비티로
+                //intent.putExtra();
+                startActivity(intent);
+            }
+        });
 
         return view;
     }
