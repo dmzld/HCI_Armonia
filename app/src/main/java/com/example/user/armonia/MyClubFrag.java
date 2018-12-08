@@ -42,7 +42,7 @@ public class MyClubFrag extends Fragment {
         listClubArrayList.add(new ListClub(R.mipmap.ic_launcher,"디스","체육"));
         listClubArrayList.add(new ListClub(R.mipmap.ic_launcher,"몰라","체육"));
 
-        adpaterListClub_my = new AdapterListClub(MyClubFrag.this,listClubArrayList);
+        adpaterListClub_my = new AdapterListClub(getActivity(),listClubArrayList);
         listClubView.setAdapter(adpaterListClub_my);
 
         btnsearchClub = (Button)view.findViewById(R.id.btnSearchClub);
