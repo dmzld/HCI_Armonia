@@ -20,9 +20,9 @@ public class ClubNotiBoardFrag extends Fragment {
         return new ClubNotiBoardFrag();
     }
     Button btnWrite;
-    ListView listPostView;
-    AdapterListPost adapterListPost;
-    ArrayList<ListPost> postArrayList;
+    ListView listNotiView;
+    AdapterListPost adapterListNoti;
+    ArrayList<ListPost> notiArrayList;
 
 
     @Override
@@ -35,22 +35,26 @@ public class ClubNotiBoardFrag extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_club_noti_board, container, false);
 
-        listPostView = (ListView)view.findViewById(R.id.listPostView);
-        postArrayList = new ArrayList<ListPost>();
+        listNotiView = (ListView)view.findViewById(R.id.listPostView);
+        notiArrayList = new ArrayList<ListPost>();
 
         // 아직 DB 연동 안함
 
-        postArrayList.add(new ListPost("1번째 글","이주형","2018/12/05"));
-        postArrayList.add(new ListPost("2번째 글","이주형","2018/12/05"));
-        postArrayList.add(new ListPost("3번째 글","이주형","2018/12/05"));
-        postArrayList.add(new ListPost("4번째 글","이주형","2018/12/05"));
-        postArrayList.add(new ListPost("5번째 글","이주형","2018/12/05"));
-        postArrayList.add(new ListPost("6번째 글","이주형","2018/12/05"));
-        postArrayList.add(new ListPost("7번째 글","이주형","2018/12/05"));
-        postArrayList.add(new ListPost("8번째 글","이주형","2018/12/05"));
+        notiArrayList.add(new ListPost("1번째 글","이주형","2018/12/05"));
+        notiArrayList.add(new ListPost("2번째 글","이주형","2018/12/05"));
+        notiArrayList.add(new ListPost("3번째 글","이주형","2018/12/05"));
+        notiArrayList.add(new ListPost("4번째 글","이주형","2018/12/05"));
+        notiArrayList.add(new ListPost("5번째 글","이주형","2018/12/05"));
+        notiArrayList.add(new ListPost("6번째 글","이주형","2018/12/05"));
+        notiArrayList.add(new ListPost("7번째 글","이주형","2018/12/05"));
+        notiArrayList.add(new ListPost("8번째 글","이주형","2018/12/05"));
+        notiArrayList.add(new ListPost("9번째 글","이주형","2018/12/05"));
+        notiArrayList.add(new ListPost("10번째 글","이주형","2018/12/05"));
 
-        adapterListPost = new AdapterListPost(getActivity(),postArrayList);
-        listPostView.setAdapter(adapterListPost);
+
+
+        adapterListNoti = new AdapterListPost(getActivity(),notiArrayList);
+        listNotiView.setAdapter(adapterListNoti);
 
         return view;
     }
