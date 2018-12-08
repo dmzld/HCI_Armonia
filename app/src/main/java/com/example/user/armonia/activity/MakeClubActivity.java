@@ -68,7 +68,7 @@ public class MakeClubActivity extends AppCompatActivity implements AdapterView.O
                     Toast.makeText(MakeClubActivity.this, "동아리명을 입력하세요!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                else if(spin.equals("선택하세요")){
+                else if(spinner.getSelectedItem().toString().equals("선택하세요")){
                     Toast.makeText(MakeClubActivity.this, "분류를 선택하세요!", Toast.LENGTH_SHORT).show();
                     return;
                 }
