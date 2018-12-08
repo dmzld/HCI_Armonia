@@ -53,7 +53,8 @@ public class MyClubFrag extends Fragment {
                 Intent intent = new Intent(getActivity(), ClubPageActivity.class);
                 //db로 클릭한 동아리 정보를 같이 건네서 해당 동아리 페이지로 가야함
                 //지금은 일단 그냥 클럽 액티비티로
-                startActivityForResult(intent,1000);
+                intent.putExtra("club_name","볼랜드");
+                startActivity(intent);
             }
         });
 

@@ -12,6 +12,8 @@ import java.util.ArrayList;
 
 public class ClubPageActivity extends AppCompatActivity {
 
+    private String club;
+
     ListView listClubPageView;
     AdapterClubPage adpaterClubPage;
     ArrayList<ListClubPage> listClubPageArrayList;
@@ -20,6 +22,9 @@ public class ClubPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_club_page);
+
+        Intent intent = getIntent();
+        club = intent.getStringExtra("club_name");
 
         listClubPageView = (ListView)findViewById(R.id.clubPageList);
         listClubPageArrayList = new ArrayList<ListClubPage>();
