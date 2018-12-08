@@ -5,11 +5,32 @@
     android:layout_height="match_parent"
     tools:context=".fragment.ClubNotiBoardFrag">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="ClubNoti"
-        tools:text="notiboard" />
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/listPostView"
+            android:layout_width="match_parent"
+            android:layout_height="458dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView10" />
+
+        <Button
+            android:id="@+id/btnWrite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/listPostView"
+            android:text="글쓰기" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="119dp"
+            android:layout_height="33dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="공지사항" />
+    </RelativeLayout>
 
 </FrameLayout>

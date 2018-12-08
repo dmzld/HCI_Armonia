@@ -1,5 +1,6 @@
 package com.example.user.armonia.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.user.armonia.activity.WritePostActivity;
 import com.example.user.armonia.list.ListPost;
 import com.example.user.armonia.R;
 import com.example.user.armonia.adapter.AdapterListPost;
@@ -36,6 +38,15 @@ public class ClubBoardFrag extends Fragment {
 
         listPostView = (ListView)view.findViewById(R.id.listPostView);
         postArrayList = new ArrayList<ListPost>();
+        btnWrite = (Button)view.findViewById(R.id.btnWrite);
+        btnWrite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(),WritePostActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         // 아직 DB 연동 안함
 
