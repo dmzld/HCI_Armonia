@@ -1,20 +1,17 @@
-package com.example.user.armonia;
+package com.example.user.armonia.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
 
-public class ClubBoardFrag extends Fragment {
+import com.example.user.armonia.R;
 
-    public static ClubBoardFrag newInstance() {
-        return new ClubBoardFrag();
+public class ClubNotiBoardFrag extends Fragment {
+
+    public static ClubNotiBoardFrag newInstance() {
+        return new ClubNotiBoardFrag();
     }
 
     @Override
@@ -25,7 +22,7 @@ public class ClubBoardFrag extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_club_board, container, false);
+        View view = inflater.inflate(R.layout.fragment_club_noti_board, container, false);
         return view;
     }
 

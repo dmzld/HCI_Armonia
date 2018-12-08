@@ -1,4 +1,4 @@
-package com.example.user.armonia;
+package com.example.user.armonia.list;
 
 //내 동아리에서 동아리 목록 띄우는 리스트뷰 들어갈 클럽 item
 public class ListClub {

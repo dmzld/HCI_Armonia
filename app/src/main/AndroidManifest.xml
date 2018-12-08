@@ -11,18 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".MakeClubActivity" />
-        <activity android:name=".MakeUnionActivity" />
-        <activity android:name=".MyInfoActivity" />
-        <activity android:name=".RegistActivity" />
+        <activity android:name=".activity.HomeActivity" />
+        <activity android:name=".activity.MakeClubActivity" />
+        <activity android:name=".activity.MakeUnionActivity" />
+        <activity android:name=".activity.MyInfoActivity" />
+        <activity android:name=".activity.RegistActivity" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -44,7 +44,8 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".ClubPageActivity"></activity>
+        <activity android:name=".activity.ClubPageActivity" />
+        <activity android:name=".activity.WritePostActivity"></activity>
     </application>
 
 </manifest>
