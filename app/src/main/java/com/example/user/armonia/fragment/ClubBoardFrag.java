@@ -69,18 +69,6 @@ public class ClubBoardFrag extends Fragment {
         });
 
 
-//        // 아직 DB 연동 안함
-//        postArrayList.add(new ListPost("1번째 글","이주형","2018/12/05"));
-//        postArrayList.add(new ListPost("2번째 글","이주형","2018/12/05"));
-//        postArrayList.add(new ListPost("3번째 글","이주형","2018/12/05"));
-//        postArrayList.add(new ListPost("4번째 글","이주형","2018/12/05"));
-//        postArrayList.add(new ListPost("5번째 글","이주형","2018/12/05"));
-//        postArrayList.add(new ListPost("6번째 글","이주형","2018/12/05"));
-//        postArrayList.add(new ListPost("7번째 글","이주형","2018/12/05"));
-//        postArrayList.add(new ListPost("8번째 글","이주형","2018/12/05"));
-//        adapterListPost = new AdapterListPost(getActivity(),postArrayList);
-//        listPostView.setAdapter(adapterListPost);
-
         listPostView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -93,67 +81,67 @@ public class ClubBoardFrag extends Fragment {
         });
 
         //주소
-       // getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/clubBoard.php");
+        getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/clubBoard.php");
 
         return view;
     }
 
-//    protected void showList() {
-//        try {
-//            JSONObject jsonObj = new JSONObject(myJSON);
-//            list = jsonObj.getJSONArray(TAG_RESULTS);
-//
-//            for (int i = 0; i < list.length(); i++) {
-//                JSONObject c = list.getJSONObject(i);
-//                String title = c.getString(TAG_title);
-//                String name = c.getString(TAG_name);
-//                String date = c.getString(TAG_date);
-//                ListPost freePost = new ListPost(title,name,date);
-//                postArrayList.add(clubPost);
-//            }
-//            Collections.reverse(freeArrayList);
-//            adapterListFree = new AdapterListPost(FreeBoardActivity.this,freeArrayList);
-//            listFreeView.setAdapter(adapterListFree);
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//    public void getData(String url) {
-//        class GetDataJSON extends AsyncTask<String, Void, String> {
-//
-//            @Override
-//            protected String doInBackground(String... params) {
-//
-//                String uri = params[0];
-//
-//                BufferedReader bufferedReader = null;
-//                try {
-//                    URL url = new URL(uri);
-//                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
-//                    StringBuilder sb = new StringBuilder();
-//
-//                    bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
-//
-//                    String json;
-//                    while ((json = bufferedReader.readLine()) != null) {
-//                        sb.append(json + "\n");
-//                    }
-//
-//                    return sb.toString().trim();
-//
-//                } catch (Exception e) {
-//                    return null;
-//                }
-//            }
-//            @Override
-//            protected void onPostExecute(String result) {
-//                myJSON = result;
-//                showList();
-//            }
-//        }
-//        GetDataJSON g = new GetDataJSON();
-//        g.execute(url);
-//    }
+    protected void showList() {
+        try {
+            JSONObject jsonObj = new JSONObject(myJSON);
+            list = jsonObj.getJSONArray(TAG_RESULTS);
+
+            for (int i = 0; i < list.length(); i++) {
+                JSONObject c = list.getJSONObject(i);
+                String title = c.getString(TAG_title);
+                String name = c.getString(TAG_name);
+                String date = c.getString(TAG_date);
+                ListPost clubPost = new ListPost(title,name,date);
+                postArrayList.add(clubPost);
+            }
+            Collections.reverse(postArrayList);
+            adapterListPost = new AdapterListPost(getActivity(),postArrayList);
+            listPostView.setAdapter(adapterListPost);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getData(String url) {
+        class GetDataJSON extends AsyncTask<String, Void, String> {
+
+            @Override
+            protected String doInBackground(String... params) {
+
+                String uri = params[0];
+
+                BufferedReader bufferedReader = null;
+                try {
+                    URL url = new URL(uri);
+                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                    StringBuilder sb = new StringBuilder();
+
+                    bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                    String json;
+                    while ((json = bufferedReader.readLine()) != null) {
+                        sb.append(json + "\n");
+                    }
+
+                    return sb.toString().trim();
+
+                } catch (Exception e) {
+                    return null;
+                }
+            }
+            @Override
+            protected void onPostExecute(String result) {
+                myJSON = result;
+                showList();
+            }
+        }
+        GetDataJSON g = new GetDataJSON();
+        g.execute(url);
+    }
 
 }
