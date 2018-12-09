@@ -12,7 +12,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.user.armonia.R;
-import com.example.user.armonia.activity.ClubPageActivity;
 import com.example.user.armonia.activity.FreeBoardActivity;
 import com.example.user.armonia.activity.PostActivity;
 import com.example.user.armonia.adapter.AdapterListPost;
