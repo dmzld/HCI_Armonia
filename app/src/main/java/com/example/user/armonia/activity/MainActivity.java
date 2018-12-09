@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             @Override
             public void onClick(View view) {
                 Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+                Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
                 startActivityForResult(signInIntent,RC_SIGN_IN);
             }
         });
@@ -144,6 +145,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                             Toast.makeText(MainActivity.this, "Facebook 아이디 연동 성공", Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
                             //updateUI(user);
+
                             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                             startActivityForResult(intent,1000);
 
@@ -187,7 +189,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                         }else{
                             Toast.makeText(MainActivity.this, "구글 로그인 인증 성공", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+
                             startActivityForResult(intent,1000);
+
                         }
                     }
                 });
