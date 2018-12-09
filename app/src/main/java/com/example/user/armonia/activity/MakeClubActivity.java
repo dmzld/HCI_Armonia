@@ -31,6 +31,9 @@ public class MakeClubActivity extends AppCompatActivity implements AdapterView.O
     JSONArray list = null;
 
     private String cu;          //동아리/연합 구분 위해 사용
+    private String email;
+    private String user;
+
     private EditText club_name;
     private EditText president_name;
     private EditText member_name1;
@@ -51,6 +54,8 @@ public class MakeClubActivity extends AppCompatActivity implements AdapterView.O
 
         Intent intent = getIntent();
         cu = intent.getStringExtra("cu");
+        email = intent.getStringExtra("email");
+        user= intent.getStringExtra("student_name");
 
         //UI생성
         club_name = (EditText)findViewById(R.id.club_name);

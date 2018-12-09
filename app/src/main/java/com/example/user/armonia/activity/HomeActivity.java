@@ -97,7 +97,7 @@ public class HomeActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.menuitem_bottombar_add:
-                    replaceFragment(AddFrag.newInstance());
+                    replaceFragment(AddFrag.newInstance(email,user));
                     return true;
             }
             return false;
