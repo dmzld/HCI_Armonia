@@ -82,28 +82,3 @@ public class ClubPageActivity extends AppCompatActivity {
         }
     };
 }
-
-/*ListView listClubPageView;
-    AdapterClubPage adpaterClubPage;
-    ArrayList<ListClubPage> listClubPageArrayList;
-
-* listClubPageView = (ListView)findViewById(R.id.clubPageList);
->>>>>>> 6dc7c217ae981e17a8f0beb9495e02d7003f03cc
-        listClubPageArrayList = new ArrayList<ListClubPage>();
-
-        //나중에 db에서 받아와서 add시켜야함 테스트용
-        //첫번째는 동아리 메인 사진, 이름, 독립적인 item
-        //listClubPageArrayList.add(new ListClub(R.mipmap.ic_launcher,"볼랜드","체육"));
-
-        //그 이후는 동아리 페이지에 올린 글
-        listClubPageArrayList.add(new ListClubPage(R.mipmap.ic_launcher,"1","이윤석","2018-12-03","바이"));
-        listClubPageArrayList.add(new ListClubPage(R.mipmap.ic_launcher,"2","이윤석","2018-12-03","바이"));
-        listClubPageArrayList.add(new ListClubPage(R.mipmap.ic_launcher,"3","이윤석","2018-12-03","바이"));
-        listClubPageArrayList.add(new ListClubPage(R.mipmap.ic_launcher,"3","이윤석","2018-12-03","바이"));
-        listClubPageArrayList.add(new ListClubPage(R.mipmap.ic_launcher,"4","이윤석","2018-12-03","바이"));
-
-        adpaterClubPage = new AdapterClubPage(ClubPageActivity.this,listClubPageArrayList);
-        listClubPageView.setAdapter(adpaterClubPage);
-*
-*
-* */

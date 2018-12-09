@@ -1,22 +1,17 @@
-package com.example.user.armonia.fragment;
+package com.example.user.armonia.activity;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.example.user.armonia.activity.FreeBoardActivity;
-import com.example.user.armonia.activity.PostActivity;
-import com.example.user.armonia.activity.WritePostActivity;
-import com.example.user.armonia.list.ListPost;
 import com.example.user.armonia.R;
 import com.example.user.armonia.adapter.AdapterListPost;
+import com.example.user.armonia.list.ListPost;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,15 +24,12 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class ClubBoardFrag extends Fragment {
+public class FreeBoardActivity extends AppCompatActivity {
 
-    public static ClubBoardFrag newInstance() {
-        return new ClubBoardFrag();
-    }
+    ListView listFreeView;
+    AdapterListPost adapterListFree;
+    ArrayList<ListPost> freeArrayList;
     Button btnWrite;
-    ListView listPostView;
-    AdapterListPost adapterListPost;
-    ArrayList<ListPost> postArrayList;
 
     //server
     String myJSON;
@@ -48,42 +40,41 @@ public class ClubBoardFrag extends Fragment {
     JSONArray list = null;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
+        setContentView(R.layout.activity_free_board);
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_club_board, container, false);
+        //intent 받은거 받아야함
+        Intent intent = getIntent();
 
-        listPostView = (ListView)view.findViewById(R.id.listClubBoardView);
-        postArrayList = new ArrayList<ListPost>();
-        btnWrite = (Button)view.findViewById(R.id.btnWrite);
+
+        //전체 자유게시판
+        listFreeView = (ListView)findViewById(R.id.listFreeView);
+        freeArrayList = new ArrayList<ListPost>();
+
+
+        btnWrite = (Button)findViewById(R.id.btnWrite);
         btnWrite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(),WritePostActivity.class);
+                Intent intent = new Intent(getApplicationContext(),WritePostActivity.class);
                 startActivity(intent);
             }
         });
 
-
-        listPostView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listFreeView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                Intent intent = new Intent(getActivity(), PostActivity.class);
-                //지금은 일단 그냥 클럽 액티비티로
+                Intent intent = new Intent(getApplicationContext(), PostActivity.class);
                 //intent.putExtra();
                 startActivity(intent);
             }
         });
 
-        //주소
-        getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/clubBoard.php");
 
-        return view;
+        //주소
+        getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/freeBoard.php");
     }
 
     protected void showList() {
@@ -96,12 +87,12 @@ public class ClubBoardFrag extends Fragment {
                 String title = c.getString(TAG_title);
                 String name = c.getString(TAG_name);
                 String date = c.getString(TAG_date);
-                ListPost clubPost = new ListPost(title,name,date);
-                postArrayList.add(clubPost);
+                ListPost freePost = new ListPost(title,name,date);
+                freeArrayList.add(freePost);
             }
-            Collections.reverse(postArrayList);
-            adapterListPost = new AdapterListPost(getActivity(),postArrayList);
-            listPostView.setAdapter(adapterListPost);
+            Collections.reverse(freeArrayList);
+            adapterListFree = new AdapterListPost(FreeBoardActivity.this,freeArrayList);
+            listFreeView.setAdapter(adapterListFree);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -143,5 +134,4 @@ public class ClubBoardFrag extends Fragment {
         GetDataJSON g = new GetDataJSON();
         g.execute(url);
     }
-
 }

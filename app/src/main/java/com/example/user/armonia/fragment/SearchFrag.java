@@ -45,14 +45,14 @@ public class SearchFrag extends Fragment {
     Button btnArt;
     Button btnSocial;
     Button btnEtc;
-    String s_category;
+    private String category="0";
 
     //server
     String myJSON;
     private static final String TAG_RESULTS = "result";
 
-    private static final String TAG_clubName = "clubName";
-    private static final String TAG_category = "category";
+    private static final String TAG_clubName = "ClubName";
+    private static final String TAG_category = "Category";
     JSONArray list = null;
 
 
@@ -76,6 +76,13 @@ public class SearchFrag extends Fragment {
 
 
         btnAll = (Button) view.findViewById(R.id.btnAll);
+        btnStudent = (Button) view.findViewById(R.id.btnStudent);
+        btnStudy = (Button) view.findViewById(R.id.btnStudy);
+        btnSport = (Button) view.findViewById(R.id.btnSport);
+        btnArt = (Button) view.findViewById(R.id.btnArt);
+        btnSocial = (Button) view.findViewById(R.id.btnSocial);
+        btnEtc = (Button) view.findViewById(R.id.btnEtc);
+
         listClubView = (ListView) view.findViewById(R.id.list_club);
         listClubArrayList = new ArrayList<ListClub>();
 
@@ -104,56 +111,57 @@ public class SearchFrag extends Fragment {
         btnAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                s_category = "0";
-                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchClub.php",s_category);
+                category = "0";
+                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchAllClub.php",category);
             }
         });
 
         btnStudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                s_category="student";
-                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchClub.php",s_category);
+                listClubView.clearAnimation();
+                category="학생회";
+                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchClub.php",category);
             }
         });
 
         btnStudy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                s_category = "study";
-                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchClub.php",s_category);
+                category = "학술";
+                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchClub.php",category);
             }
         });
 
         btnSport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                s_category = "sport";
-                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchClub.php",s_category);
+                category = "스포츠";
+                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchClub.php",category);
             }
         });
 
         btnArt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                s_category = "art";
-                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchClub.php",s_category);
+                category = "예술";
+                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchClub.php",category);
             }
         });
 
         btnSocial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                s_category = "social";
-                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchClub.php",s_category);
+                category = "사회활동";
+                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchClub.php",category);
             }
         });
 
         btnEtc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                s_category="etc";
-                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchClub.php",s_category);
+                category="기타";
+                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchClub.php",category);
             }
         });
 
@@ -166,6 +174,7 @@ public class SearchFrag extends Fragment {
             JSONObject jsonObj = new JSONObject(myJSON);
             list = jsonObj.getJSONArray(TAG_RESULTS);
 
+            listClubArrayList.clear();
             for (int i = 0; i < list.length(); i++) {
                 JSONObject c = list.getJSONObject(i);
 
@@ -177,12 +186,13 @@ public class SearchFrag extends Fragment {
             }
             adapaterListClub = new AdapterListClub(getActivity(), listClubArrayList);
             listClubView.setAdapter(adapaterListClub);
+            adapaterListClub.notifyDataSetChanged();
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
 
-    public void getData(String url, String s_category) {
+    public void getData(String url, String category) {
         class GetDataJSON extends AsyncTask<String, Void, String> {
 
             @Override
@@ -192,8 +202,8 @@ public class SearchFrag extends Fragment {
                 try {
 
                     String uri = params[0];
-                    String s_category = params[1];
-                    String data = URLEncoder.encode("s_category","UTF-8")+"="+URLEncoder.encode(s_category,"UTF-8");
+                    String category = params[1];
+                    String data = URLEncoder.encode("category","UTF-8")+"="+URLEncoder.encode(category,"UTF-8");
                     URL url = new URL(uri);
                     HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
@@ -217,7 +227,7 @@ public class SearchFrag extends Fragment {
                 } catch (Exception e) {
                     return null;
                 }
-            } 
+            }
 
             @Override
             protected void onPostExecute(String result) {
@@ -226,7 +236,7 @@ public class SearchFrag extends Fragment {
             }
         }
         GetDataJSON g = new GetDataJSON();
-        g.execute(url,s_category);
+        g.execute(url,category);
 
 
     }

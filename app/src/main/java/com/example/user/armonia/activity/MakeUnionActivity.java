@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.user.armonia.R;
 
@@ -21,11 +22,12 @@ public class MakeUnionActivity extends AppCompatActivity implements AdapterView.
     String[] item2;         //spinner 2 목록
 
     //아직 전부는 구현안함
-    private EditText club_name;
+    private EditText union_name;
+//    private Button btnAdd;
     private EditText union_content;
-    private Button btnAdd;
-    private Button btn_cancel;
     private Button btn_make_union;
+    private Button btn_cancel;
+
 
 
     @Override
@@ -33,9 +35,11 @@ public class MakeUnionActivity extends AppCompatActivity implements AdapterView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_union);
 
-
+        union_name = (EditText)findViewById(R.id.union_name);
         spinner = (Spinner)findViewById(R.id.my_club);
         spinner2 = (Spinner)findViewById(R.id.add_union);
+        union_content = (EditText)findViewById(R.id.union_content);
+        btn_make_union = (Button)findViewById(R.id.btn_make_union);
         btn_cancel = (Button)findViewById(R.id.btn_cancel);
 //        btnAdd = (Button)findViewById(R.id.btnAdd);
 
@@ -59,6 +63,28 @@ public class MakeUnionActivity extends AppCompatActivity implements AdapterView.
 //
 //            }
 //        });
+
+        btn_make_union.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(union_name.getText().toString().length()==0){
+                    Toast.makeText(MakeUnionActivity.this, "연합명을 입력하세요!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else if(spinner.getSelectedItem().toString().equals("선택하세요")){
+                    Toast.makeText(MakeUnionActivity.this, "소속 동아리를 입력하세요!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else if(spinner2.getSelectedItem().toString().equals("선택하세요")){
+                    Toast.makeText(MakeUnionActivity.this, "연합할 동아리명을 입력하세요!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else if(union_content.getText().toString().length()==0){
+                    Toast.makeText(MakeUnionActivity.this, "연합 설명을 입력하세요!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            }
+        });
 
         //취소를 눌렀을때 수행 기대값
         btn_cancel.setOnClickListener(new View.OnClickListener() {
