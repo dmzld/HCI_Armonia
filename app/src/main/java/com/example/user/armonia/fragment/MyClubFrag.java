@@ -32,14 +32,24 @@ import java.util.Collections;
 
 public class MyClubFrag extends Fragment {
 
-    public static MyClubFrag newInstance() {
-        return new MyClubFrag();
+    static String curEmail="curEmail";
+    static String curUser="curUser";
+    String email;
+    String user;
+
+    public static MyClubFrag newInstance(String email, String user) {
+        MyClubFrag myClubFrag = new MyClubFrag();
+        Bundle args = new Bundle();
+        args.putString(curEmail,email);
+        args.putString(curUser,user);
+        myClubFrag.setArguments(args);
+        return myClubFrag;
     }
+
 
     ListView listClubView;
     AdapterListClub adapterListClub_my;
     ArrayList<ListClub> listClubArrayList;
-    Button btnsearchClub;
 
     //server
     String myJSON;
@@ -62,7 +72,6 @@ public class MyClubFrag extends Fragment {
         listClubView = (ListView)view.findViewById(R.id.list_myClub);
         listClubArrayList = new ArrayList<ListClub>();
 
-        btnsearchClub = (Button)view.findViewById(R.id.btnSearchClub);
 
         listClubView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -71,17 +80,12 @@ public class MyClubFrag extends Fragment {
                 Intent intent = new Intent(getActivity(), ClubPageActivity.class);
                 //db로 클릭한 동아리 정보를 같이 건네서 해당 동아리 페이지로 가야함
                 //지금은 일단 그냥 클럽 액티비티로
-                intent.putExtra("club_name","볼랜드");
+                intent.putExtra("email",email);
+                intent.putExtra("user",user);
                 startActivity(intent);
             }
         });
 
-        btnsearchClub.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //버튼 눌렀을때 searchclub frag로 갈껀데 굳이 해야됨? 밑에 바로 있음
-            }
-        });
 
 
         //주소

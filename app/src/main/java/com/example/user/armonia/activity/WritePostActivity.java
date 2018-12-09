@@ -1,5 +1,6 @@
 package com.example.user.armonia.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,10 @@ import android.widget.EditText;
 import com.example.user.armonia.R;
 
 public class WritePostActivity extends AppCompatActivity {
+
+    String email;
+    String user;
+
     Button btnSuccess;
     Button btnCancel;
     EditText writeTitle;
@@ -18,6 +23,10 @@ public class WritePostActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write_post);
+
+        Intent intent = getIntent();
+        email = intent.getStringExtra("email");
+        user = intent.getStringExtra("user");
 
         btnSuccess = (Button)findViewById(R.id.btnSuccess);
         btnSuccess.setOnClickListener(new View.OnClickListener() {
@@ -37,6 +46,8 @@ public class WritePostActivity extends AppCompatActivity {
             }
         });
 
+
+        //글쓰기 php
 
     }
 }

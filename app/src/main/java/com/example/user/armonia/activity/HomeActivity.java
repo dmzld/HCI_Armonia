@@ -1,6 +1,7 @@
 package com.example.user.armonia.activity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.user.armonia.R;
 import com.example.user.armonia.fragment.AddFrag;
@@ -17,6 +19,13 @@ import com.example.user.armonia.fragment.HomeFrag;
 import com.example.user.armonia.fragment.MyClubFrag;
 import com.example.user.armonia.fragment.SearchFrag;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 
 public class HomeActivity extends AppCompatActivity {
     //AddFage, CollaboBoardFrag, HomeFrag, MyClubFrag, SearchFage를 갖는다
@@ -46,6 +55,7 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = getIntent();
         email = intent.getStringExtra("email");
         user = intent.getStringExtra("user");
+
 
 
 
@@ -85,15 +95,15 @@ public class HomeActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.menuitem_bottombar_myClub:
-                    replaceFragment(MyClubFrag.newInstance());
+                    replaceFragment(MyClubFrag.newInstance(email,user));
                     return true;
 
                 case R.id.menuitem_bottombar_search:
-                    replaceFragment(SearchFrag.newInstance());
+                    replaceFragment(SearchFrag.newInstance(email,user));
                     return true;
 
                 case R.id.menuitem_bottombar_collaboBoard:
-                    replaceFragment(CollaboBoardFrag.newInstance());
+                    replaceFragment(CollaboBoardFrag.newInstance(email,user));
                     return true;
 
                 case R.id.menuitem_bottombar_add:
@@ -110,4 +120,7 @@ public class HomeActivity extends AppCompatActivity {
             fragmentTransaction.replace(R.id.fragment_container, fragment).commit();
         }
     };
+
+
+
 }
