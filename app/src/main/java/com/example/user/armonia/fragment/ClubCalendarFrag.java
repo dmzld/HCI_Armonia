@@ -16,7 +16,6 @@ public class ClubCalendarFrag extends Fragment {
     }
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

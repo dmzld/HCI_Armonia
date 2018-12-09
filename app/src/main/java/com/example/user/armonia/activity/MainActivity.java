@@ -104,6 +104,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             @Override
             public void onClick(View view) {
                 Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+
+                //로그인 id 넘겨주어야 됨
+                signInIntent.putExtra("email",mAuth.getCurrentUser().getEmail().toString());
+
                 startActivityForResult(signInIntent,RC_SIGN_IN);
             }
         });
@@ -187,6 +191,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                         }else{
                             Toast.makeText(MainActivity.this, "구글 로그인 인증 성공", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+
+                            //로그인 id 넘겨주어야 됨
+                            intent.putExtra("email",mAuth.getCurrentUser().getEmail().toString());
+
+
                             startActivityForResult(intent,1000);
                         }
                     }

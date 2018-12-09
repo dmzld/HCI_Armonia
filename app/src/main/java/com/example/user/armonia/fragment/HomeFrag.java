@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.user.armonia.R;
 import com.example.user.armonia.activity.FreeBoardActivity;
@@ -23,6 +24,11 @@ public class HomeFrag extends Fragment {
     public static HomeFrag newInstance() {
         return new HomeFrag();
     }
+
+    Bundle extra = getArguments();
+    String email = extra.getString("email");
+    TextView textCurEmail;
+
 
     //동아리게시판
     ListView listHomeClubView;
@@ -40,12 +46,18 @@ public class HomeFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.frag_home, container, false);
 
+        textCurEmail = (TextView)view.findViewById(R.id.textCurEmail);
+        textCurEmail.setText(email);
+
+
+
         //여기서는 item 각각 5개씩만 불러올 것
 
 
         //동아리 게시판
         listHomeClubView = (ListView)view.findViewById(R.id.listHomeClubView);
         homeClubArrayList = new ArrayList<ListPost>();
+
 
         // 아직 DB 연동 안함
         homeClubArrayList.add(new ListPost("1번째 홈클럽글","이주형","2018/12/05"));
