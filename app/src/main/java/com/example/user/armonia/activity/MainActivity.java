@@ -100,10 +100,15 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         mAuth = FirebaseAuth.getInstance();
 
         Google_Login = findViewById(R.id.Google_Login);
+
         Google_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+
+                Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
+
+
                 startActivityForResult(signInIntent,RC_SIGN_IN);
             }
         });
@@ -144,6 +149,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                             Toast.makeText(MainActivity.this, "Facebook 아이디 연동 성공", Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
                             //updateUI(user);
+
                             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                             startActivityForResult(intent,1000);
 
@@ -185,9 +191,16 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                         if(!task.isSuccessful()){
                             Toast.makeText(MainActivity.this, "인증 실패", Toast.LENGTH_SHORT).show();
                         }else{
+                            FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(MainActivity.this, "구글 로그인 인증 성공", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+
+                            //로그인 id 넘겨주어야 됨
+                            intent.putExtra("email",user.getEmail());
+                            intent.putExtra("user",user.getDisplayName());
+
                             startActivityForResult(intent,1000);
+
                         }
                     }
                 });

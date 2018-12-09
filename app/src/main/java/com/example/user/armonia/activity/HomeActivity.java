@@ -1,5 +1,6 @@
 package com.example.user.armonia.activity;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -19,11 +20,17 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
     //AddFage, CollaboBoardFrag, HomeFrag, MyClubFrag, SearchFage를 갖는다
-
     private Fragment fragment;
     private FragmentManager fragmentManager;
+
+
+    Bundle bundle = new Bundle();
+
+
     //private Button btnLogout;
     private FirebaseAuth auth;
+    private String email;
+    private String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +39,14 @@ public class HomeActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
       //  btnLogout = (Button)findViewById(R.id.btnLogout);
-
         fragmentManager = getSupportFragmentManager();
+
+
+        //id 받아와서 myclub 등에서 줘야햄
+        Intent intent = getIntent();
+        email = intent.getStringExtra("email");
+        user = intent.getStringExtra("user");
+
 
 
         //하단에 버튼네비게이션 생성
@@ -43,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
         //첫 화면에 home fragment 만들기
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.add(R.id.fragment_container, HomeFrag.newInstance()).commit();
+        transaction.add(R.id.fragment_container, HomeFrag.newInstance(email,user)).commit();
 
 
         /*btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +81,7 @@ public class HomeActivity extends AppCompatActivity {
             switch (item.getItemId()) {
 
                 case R.id.menuitem_bottombar_home:
-                    replaceFragment(HomeFrag.newInstance());
+                    replaceFragment(HomeFrag.newInstance(email,user));
                     return true;
 
                 case R.id.menuitem_bottombar_myClub:
