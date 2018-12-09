@@ -111,7 +111,7 @@ public class SearchFrag extends Fragment {
         btnAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                category = "0";
+
                 getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchAllClub.php",category);
             }
         });
@@ -186,7 +186,7 @@ public class SearchFrag extends Fragment {
             }
             adapaterListClub = new AdapterListClub(getActivity(), listClubArrayList);
             listClubView.setAdapter(adapaterListClub);
-            adapaterListClub.notifyDataSetChanged();
+            //adapaterListClub.notifyDataSetChanged();
         } catch (JSONException e) {
             e.printStackTrace();
         }
