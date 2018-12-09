@@ -35,6 +35,7 @@ public class AddFrag extends Fragment{
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(getContext(),MakeClubActivity.class);
+                intent.putExtra("cu","C");          //동아리 생성 표시
                 startActivity(intent);
             }
         });
@@ -44,6 +45,7 @@ public class AddFrag extends Fragment{
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(getContext(),MakeUnionActivity.class);
+                intent.putExtra("cu","U");          //연합생성 표시
                 startActivity(intent);
             }
         });
