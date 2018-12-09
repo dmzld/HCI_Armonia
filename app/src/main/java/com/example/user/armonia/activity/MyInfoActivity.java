@@ -1,4 +1,4 @@
-package com.example.user.armonia;
+package com.example.user.armonia.activity;
 
 
 import android.content.DialogInterface;
@@ -20,6 +20,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.user.armonia.MyInfoAlarmFrag;
+import com.example.user.armonia.MyInfoByeByeFrag;
+import com.example.user.armonia.MyInfoChangePassword;
+import com.example.user.armonia.MyInfoFragMain;
+import com.example.user.armonia.MyInfoMessageFrag;
+import com.example.user.armonia.R;
+
 import java.io.InputStream;
 
 import static android.view.View.GONE;
@@ -37,6 +44,7 @@ public class MyInfoActivity extends AppCompatActivity implements MyInfoFragMain.
 
     private ConstraintLayout layout_myinfo;
     private RelativeLayout layout_modify;
+
 
 
     @Override
@@ -75,6 +83,9 @@ public class MyInfoActivity extends AppCompatActivity implements MyInfoFragMain.
                 try {
                     InputStream in = getContentResolver().openInputStream(data.getData());
                     Bitmap img = BitmapFactory.decodeStream(in);
+
+
+
                     in.close();
                     img_myinfo.setImageBitmap(img);
                     change_img.setImageBitmap(img);

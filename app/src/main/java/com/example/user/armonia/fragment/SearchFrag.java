@@ -1,4 +1,4 @@
-package com.example.user.armonia;
+package com.example.user.armonia.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,20 +8,30 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+
 import android.widget.ListView;
-import android.widget.RelativeLayout;
+
+import android.widget.SearchView;
+
+import com.example.user.armonia.activity.ClubPageActivity;
+import com.example.user.armonia.list.ListClub;
+import com.example.user.armonia.R;
+import com.example.user.armonia.adapter.AdapterListClub;
 
 import java.util.ArrayList;
 
-public class MyClubFrag extends Fragment {
 
-    public static MyClubFrag newInstance() {
-        return new MyClubFrag();
-    }
+public class SearchFrag extends Fragment {
+
+    SearchView searchClub;
+    public static SearchFrag newInstance() { return new SearchFrag(); }
     ListView listClubView;
-    AdapterListClub adpaterListClub_my;
+    AdapterListClub adpaterListClub;
     ArrayList<ListClub> listClubArrayList;
-    Button btnsearchClub;
+
+
+    Button btn;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,10 +40,9 @@ public class MyClubFrag extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        //RelativeLayout myClubFrag = (RelativeLayout)inflater.inflate(R.layout.frag_myclub, container, false);
-        View view = inflater.inflate(R.layout.frag_myclub, container, false);
+        View view = inflater.inflate(R.layout.fragment_search, container, false);
 
-        listClubView = (ListView)view.findViewById(R.id.list_myClub);
+        listClubView = (ListView)view.findViewById(R.id.list_club);
         listClubArrayList = new ArrayList<ListClub>();
 
         //나중에 db에서 받아와서 add시켜야함 테스트용
@@ -42,29 +51,24 @@ public class MyClubFrag extends Fragment {
         listClubArrayList.add(new ListClub(R.mipmap.ic_launcher,"디스","체육"));
         listClubArrayList.add(new ListClub(R.mipmap.ic_launcher,"몰라","체육"));
 
-        adpaterListClub_my = new AdapterListClub(getActivity(),listClubArrayList);
-        listClubView.setAdapter(adpaterListClub_my);
+        adpaterListClub = new AdapterListClub(getActivity(),listClubArrayList);
+        listClubView.setAdapter(adpaterListClub);
 
-        btnsearchClub = (Button)view.findViewById(R.id.btnSearchClub);
 
         listClubView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
                 Intent intent = new Intent(getActivity(), ClubPageActivity.class);
                 //db로 클릭한 동아리 정보를 같이 건네서 해당 동아리 페이지로 가야함
                 //지금은 일단 그냥 클럽 액티비티로
-                startActivityForResult(intent,1000);
+                intent.putExtra("club_name","볼랜드");
+                startActivity(intent);
             }
         });
 
-        btnsearchClub.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //버튼 눌렀을때 searchclub frag로 갈껀데 굳이 해야됨? 밑에 바로 있음
-            }
-        });
+        return view;
 
-        return view; // 여기서 UI를 생성해서 View를 return
     }
 
 

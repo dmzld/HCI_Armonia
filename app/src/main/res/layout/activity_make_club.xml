@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MakeClubActivity">
+    tools:context=".activity.MakeClubActivity">
 
     <TextView
         android:id="@+id/textView1"
@@ -78,11 +78,11 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="250dp"
+        android:layout_width="280dp"
         android:layout_height="20dp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="240dp"
-        android:text="-동아리원(본인 제외, 4명 이상 쓰세요)-" />
+        android:text="-동아리원(본인 제외, 4명 이상 이름을 쓰세요)-" />
 
 
     <TextView
@@ -171,12 +171,12 @@
         android:background="@drawable/buttonshape"
         android:text="취소" />
 
-    <Button
-        android:id="@+id/btn_add_more"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="250dp"
-        android:layout_marginTop="450dp"
-        android:background="@drawable/buttonshape"
-        android:text="동아리원 추가" />
+    <!--<Button-->
+        <!--android:id="@+id/btn_add_more"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="250dp"-->
+        <!--android:layout_marginTop="450dp"-->
+        <!--android:background="@drawable/buttonshape"-->
+        <!--android:text="동아리원 추가" />-->
 </RelativeLayout>
