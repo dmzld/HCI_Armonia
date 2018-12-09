@@ -24,12 +24,13 @@ public class HomeActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
 
 
-    //private Bundle bundle = new Bundle();/////
+    Bundle bundle = new Bundle();
 
 
     //private Button btnLogout;
     private FirebaseAuth auth;
     private String email;
+    private String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,19 +42,10 @@ public class HomeActivity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
 
 
-
-
-
         //id 받아와서 myclub 등에서 줘야햄
-
- //       Intent intent = getIntent();
-//        email = intent.getStringExtra("email");
-//        bundle.putString("email",email);
-//        fragment.setArguments(bundle);
-
-
-
-
+        Intent intent = getIntent();
+        email = intent.getStringExtra("email");
+        user = intent.getStringExtra("user");
 
 
 
@@ -64,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
         //첫 화면에 home fragment 만들기
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.add(R.id.fragment_container, HomeFrag.newInstance()).commit();
+        transaction.add(R.id.fragment_container, HomeFrag.newInstance(email,user)).commit();
 
 
         /*btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +81,7 @@ public class HomeActivity extends AppCompatActivity {
             switch (item.getItemId()) {
 
                 case R.id.menuitem_bottombar_home:
-                    replaceFragment(HomeFrag.newInstance());
+                    replaceFragment(HomeFrag.newInstance(email,user));
                     return true;
 
                 case R.id.menuitem_bottombar_myClub:

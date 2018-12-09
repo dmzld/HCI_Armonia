@@ -21,23 +21,22 @@ import java.util.ArrayList;
 
 public class HomeFrag extends Fragment {
 
-    public static HomeFrag newInstance() {
-        return new HomeFrag();
+    static String curEmail="curEmail";
+    static String curUser="curUser";
+    String email;
+    String user;
+
+    public static HomeFrag newInstance(String email,String user) {
+        HomeFrag homeFrag = new HomeFrag();
+        Bundle args = new Bundle();
+        args.putString(curEmail,email);
+        args.putString(curUser,user);
+        homeFrag.setArguments(args);
+        return homeFrag;
     }
 
 
-
-//
-//    Bundle extra = getArguments();
-//    String email = extra.getString("email");
-//    TextView textCurEmail;
-
-
-
-
-
-
-
+    TextView textCurUser;
     //동아리게시판
     ListView listHomeClubView;
     AdapterListPost adapterListHomeClub;
@@ -54,9 +53,12 @@ public class HomeFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.frag_home, container, false);
 
-//        textCurEmail = (TextView)view.findViewById(R.id.textCurEmail);
-//        textCurEmail.setText(email);
-
+        if(getArguments()!=null){
+            email=getArguments().getString(curEmail);
+            user=getArguments().getString(curUser);
+        }
+        textCurUser = (TextView)view.findViewById(R.id.textCurUser);
+        textCurUser.setText(user+"님");
 
 
         //여기서는 item 각각 5개씩만 불러올 것

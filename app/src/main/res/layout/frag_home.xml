@@ -41,12 +41,13 @@
         android:text="더보기" />
 
     <TextView
-        android:id="@+id/textCurEmail"
-        android:layout_width="166dp"
+        android:id="@+id/textCurUser"
+        android:layout_width="51dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/btnMoreFree"
-        android:layout_marginStart="-108dp" />
+        android:text="user"
+        android:textSize="18sp" />
 
 
 </RelativeLayout>

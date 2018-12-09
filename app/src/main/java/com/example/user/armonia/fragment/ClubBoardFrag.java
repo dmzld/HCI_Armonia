@@ -1,6 +1,7 @@
 package com.example.user.armonia.fragment;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -17,8 +18,15 @@ import com.example.user.armonia.adapter.AdapterListPost;
 import com.example.user.armonia.list.ListPost;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ClubBoardFrag extends Fragment {
 
