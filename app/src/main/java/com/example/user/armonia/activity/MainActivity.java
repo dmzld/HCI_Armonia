@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
 
                 //로그인 id 넘겨주어야 됨
-                signInIntent.putExtra("email",mAuth.getCurrentUser().getEmail().toString());
+                //signInIntent.putExtra("email",mAuth.getCurrentUser().getEmail().toString());
 
                 startActivityForResult(signInIntent,RC_SIGN_IN);
             }
@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
 
                             //로그인 id 넘겨주어야 됨
-                            intent.putExtra("email",mAuth.getCurrentUser().getEmail().toString());
+                            //intent.putExtra("email",mAuth.getCurrentUser().getEmail().toString());
 
 
                             startActivityForResult(intent,1000);

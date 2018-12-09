@@ -26,9 +26,9 @@ public class HomeFrag extends Fragment {
         return new HomeFrag();
     }
 
-    Bundle extra = getArguments();
-    String email = extra.getString("email");
-    TextView textCurEmail;
+//    Bundle extra = getArguments();
+//    String email = extra.getString("email");
+//    TextView textCurEmail;
 
 
     //동아리게시판
@@ -47,8 +47,8 @@ public class HomeFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.frag_home, container, false);
 
-        textCurEmail = (TextView)view.findViewById(R.id.textCurEmail);
-        textCurEmail.setText(email);
+//        textCurEmail = (TextView)view.findViewById(R.id.textCurEmail);
+//        textCurEmail.setText(email);
 
 
 

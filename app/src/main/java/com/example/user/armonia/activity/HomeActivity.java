@@ -38,10 +38,10 @@ public class HomeActivity extends AppCompatActivity {
 
 
         //id 받아와서 myclub 등에서 줘야햄
-        Intent intent = getIntent();
-        email = intent.getStringExtra("email");
-        bundle.putString("email",email);
-        fragment.setArguments(bundle);
+//        Intent intent = getIntent();
+//        email = intent.getStringExtra("email");
+//        bundle.putString("email",email);
+//        fragment.setArguments(bundle);
 
 
         //하단에 버튼네비게이션 생성
