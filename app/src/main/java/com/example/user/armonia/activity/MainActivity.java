@@ -1,6 +1,7 @@
 package com.example.user.armonia.activity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,6 +33,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener  {
 
 
@@ -45,6 +53,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private GoogleApiClient mGoogleApiClient;
     private CallbackManager mCallbackManager;
     SignInButton Google_Login;
+
+    private String femail;
+    private String fuser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -176,6 +187,15 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 //구글 로그인 성공해서 파이어베이스에 인증
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
+
+
+
+                //최초인증에서 db에 저장
+                showData(femail,fuser);
+
+
+
+
             }
             else{
                 //구글 로그인 실패
@@ -195,6 +215,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                             Toast.makeText(MainActivity.this, "구글 로그인 인증 성공", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
 
+                            //최초인증에서 db에 저장
+                            showData(user.getEmail(),user.getDisplayName());
+
                             //로그인 id 넘겨주어야 됨
                             intent.putExtra("email",user.getEmail());
                             intent.putExtra("user",user.getDisplayName());
@@ -210,7 +233,66 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
     }
 
+    public void showData(String email, String user){
 
+        class InsetData extends AsyncTask<String, Void, String> {
+
+            @Override
+            protected void onPreExecute(){
+                super.onPreExecute();
+            }
+
+            @Override
+            protected void onPostExecute(String s){
+                super.onPostExecute(s);
+                Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            protected  String doInBackground(String... params)
+            {
+                try{
+                    String gEmail = (String)params[0];
+                    String gUser = (String)params[1];
+
+
+                    String link = "http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/mainInputEmail.php";
+                    String data = URLEncoder.encode("gEmail","UTF-8")+"="+URLEncoder.encode(gEmail,"UTF-8");
+                    data += "&" + URLEncoder.encode("gUser","UTF-8")+"="+URLEncoder.encode(gUser,"UTF-8");
+
+
+                    URL url = new URL(link);
+                    URLConnection conn = url.openConnection();
+
+                    conn.setDoOutput(true);
+                    OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
+
+                    wr.write(data);
+                    wr.flush();
+
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+
+                    StringBuilder sb = new StringBuilder();
+                    String line = null;
+
+                    while((line = reader.readLine()) != null)
+                    {
+                        sb.append(line);
+                        break;
+                    }
+                    return sb.toString();
+                }
+                catch(Exception e)
+                {
+                    return new String("Exception: "+e.getMessage());
+                }
+
+            }
+        }
+
+        InsetData task = new InsetData();
+        task.execute(email,user);
+    }
 
 
 }

@@ -56,9 +56,18 @@ public class SearchFrag extends Fragment {
     private static final String TAG_category = "Category";
     JSONArray list = null;
 
+    static String curEmail="curEmail";
+    static String curUser="curUser";
+    String email;
+    String user;
 
-    public static SearchFrag newInstance() {
-        return new SearchFrag();
+    public static SearchFrag newInstance(String email, String user) {
+        SearchFrag searchFrag = new SearchFrag();
+        Bundle args = new Bundle();
+        args.putString(curEmail,email);
+        args.putString(curUser,user);
+        searchFrag.setArguments(args);
+        return searchFrag;
     }
 
     ListView listClubView;

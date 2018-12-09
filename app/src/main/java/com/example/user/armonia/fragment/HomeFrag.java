@@ -123,9 +123,9 @@ public class HomeFrag extends Fragment {
         btnMoreFree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //자유게시판 액티비티만들어야됨
                 Intent intent = new Intent(getActivity(), FreeBoardActivity.class);
-                intent.putExtra("club_name","볼랜드");
+                intent.putExtra("email",email);
+                intent.putExtra("user",user);
                 startActivity(intent);
             }
         });

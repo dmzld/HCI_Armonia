@@ -1,5 +1,6 @@
 package com.example.user.armonia.activity;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -19,6 +20,11 @@ import com.example.user.armonia.fragment.ClubNotiBoardFrag;
 public class ClubPageActivity extends AppCompatActivity {
 //ClubHomeFrag, NotiBoardFrag, ClubCalendarFrag, ClubAlbumFrag, ClubBoardFrag를 갖는다
 
+    private String email;
+    private String user;
+
+
+
     private Fragment fragmentClub;
     private FragmentManager fragmentClubManager;
     //private Button btnLogout;
@@ -29,6 +35,10 @@ public class ClubPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_club_page);
+
+        Intent intent = getIntent();
+        email = intent.getStringExtra("email");
+        user = intent.getStringExtra("user");
 
 
         fragmentClubManager = getSupportFragmentManager();

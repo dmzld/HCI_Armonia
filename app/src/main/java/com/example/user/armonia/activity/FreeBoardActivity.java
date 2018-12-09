@@ -26,6 +26,9 @@ import java.util.Collections;
 
 public class FreeBoardActivity extends AppCompatActivity {
 
+    String email;
+    String user;
+
     ListView listFreeView;
     AdapterListPost adapterListFree;
     ArrayList<ListPost> freeArrayList;
@@ -46,7 +49,8 @@ public class FreeBoardActivity extends AppCompatActivity {
 
         //intent 받은거 받아야함
         Intent intent = getIntent();
-
+        email = intent.getStringExtra("email");
+        user = intent.getStringExtra("user");
 
         //전체 자유게시판
         listFreeView = (ListView)findViewById(R.id.listFreeView);
@@ -58,6 +62,8 @@ public class FreeBoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),WritePostActivity.class);
+                intent.putExtra("email",email);
+                intent.putExtra("user",user);
                 startActivity(intent);
             }
         });
