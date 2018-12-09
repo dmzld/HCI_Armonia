@@ -50,7 +50,7 @@ public class SearchFrag extends Fragment {
 
     //server
     String myJSON;
-    private static final String TAG_RESULTS = "result";
+    private  final String TAG_RESULTS = "result";
 
     private static final String TAG_clubName = "ClubName";
     private static final String TAG_category = "Category";
@@ -112,7 +112,7 @@ public class SearchFrag extends Fragment {
         btnStudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listClubView.clearAnimation();
+
                 category="학생회";
                 getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchClub.php",category);
             }
@@ -177,9 +177,12 @@ public class SearchFrag extends Fragment {
                 ListClub lists = new ListClub(R.mipmap.ic_launcher, clubName, category);
                 listClubArrayList.add(lists);
             }
+            
             adapaterListClub = new AdapterListClub(getActivity(), listClubArrayList);
             listClubView.setAdapter(adapaterListClub);
-            adapaterListClub.notifyDataSetChanged();
+           adapaterListClub.notifyDataSetChanged();
+
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
