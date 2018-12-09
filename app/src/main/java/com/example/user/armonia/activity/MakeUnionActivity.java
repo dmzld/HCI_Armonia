@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.user.armonia.R;
+import com.example.user.armonia.adapter.AdapterListClub;
+import com.example.user.armonia.list.ListClub;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,7 +38,13 @@ public class MakeUnionActivity extends AppCompatActivity implements AdapterView.
     String[] item;          //spinner 1 목록
     String myJSON;
 
+    private static final String TAG_Club_name="Club_name";
+    private static final String TAG_RESULTS = "result";
+
     private String cu;          //동아리/연합 구분 위해 사용
+    private String email;
+    private String user;
+
     private EditText union_name;
     private EditText president_name;
     private EditText union_content;
@@ -45,6 +53,7 @@ public class MakeUnionActivity extends AppCompatActivity implements AdapterView.
 
     //spin값 받아오기 위해 사용
     private String spin;
+
     JSONArray list = null;
 
 
@@ -53,8 +62,12 @@ public class MakeUnionActivity extends AppCompatActivity implements AdapterView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_union);
 
+        //값을 전 activity로부터 넘겨받음
         Intent intent = getIntent();
         cu = intent.getStringExtra("cu");
+        email = intent.getStringExtra("studentEmail");
+        user= intent.getStringExtra("studentName");
+
 
         union_name = (EditText)findViewById(R.id.union_name);
         president_name = (EditText)findViewById(R.id.president_name);
@@ -63,20 +76,13 @@ public class MakeUnionActivity extends AppCompatActivity implements AdapterView.
         btn_make_union = (Button)findViewById(R.id.btn_make_union);
         btn_cancel = (Button)findViewById(R.id.btn_cancel);
 
-
-        //********수정필요******spinner에 나타날 인자(?)들
-        item = new String[]{"선택하세요","볼랜드","한터","5분쉼표","학생회","안시"};
+        Log.i("getDatafinish","6666666666");
+        item = new String[]{"선택하세요","볼랜드","ANC","5분쉼표","ATC","Do_IT","Eyecon","GLEE","고슴도치","늘사랑","소금꽃","시사문제감독","아미","호롱불","호우회"};
 
         //spinner생성 코드
         ArrayAdapter <String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-
-
-  //      getData("http://52.11.180.128/dbProject/6_1.php","");
-
-
-
 
         btn_make_union.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,58 +125,10 @@ public class MakeUnionActivity extends AppCompatActivity implements AdapterView.
         });
     }
 
-//
-//    public void getData(String url, String category) {
-//        class GetDataJSON extends AsyncTask<String, Void, String> {
-//
-//            @Override
-//            protected String doInBackground(String... params) {
-//
-//
-//                BufferedReader bufferedReader = null;
-//                try {
-//                    String uri = params[0];
-//                    String category = params[1];
-//                    String data = URLEncoder.encode("category","UTF-8")+"="+URLEncoder.encode(category,"UTF-8");
-//                    URL url = new URL(uri);
-//                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
-//
-//                    con.setDoOutput(true);
-//                    OutputStreamWriter wr = new OutputStreamWriter(con.getOutputStream());
-//
-//                    wr.write(data);
-//                    wr.flush();
-//
-//                    StringBuilder sb = new StringBuilder();
-//
-//                    bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
-//
-//                    String json;
-//                    while ((json = bufferedReader.readLine()) != null) {
-//                        sb.append(json + "\n");
-//                    }
-//                    Log.i("after","after");
-//
-//                    return sb.toString().trim();
-//
-//                } catch (Exception e) {
-//                    return null;
-//                }
-//
-//
-//            }
-//
-//            @Override
-//            protected void onPostExecute(String result) {
-//                myJSON = result;
-//            }
-//        }
-//        GetDataJSON g = new GetDataJSON();
-//        g.execute(url,category);
-//    }
 
 
-    //디비와 연동하는 함수
+
+        //디비와 연동하는 함수
     public void showData(String union_name, String spin, String union_content, String president_name, String cu){
 
         class InsetData extends AsyncTask<String, Void, String> {

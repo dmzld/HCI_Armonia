@@ -11,7 +11,6 @@ import android.widget.ImageView;
 public class MyInfoFragMain extends Fragment {
 
     private ImageView alarm;
-    private ImageView message;
     private ImageView byebye;
     private ImageView logout;
     private sendToActivity sendingData;
@@ -52,7 +51,6 @@ public class MyInfoFragMain extends Fragment {
         View view = inflater.inflate(R.layout.fragment_myinfo_main, container, false);
 
         this.alarm =  (ImageView)view.findViewById(R.id.alarm);
-        this.message = (ImageView)view.findViewById(R.id.message);
         this.byebye = (ImageView)view.findViewById(R.id.byebye);
         this.logout = (ImageView)view.findViewById(R.id.logout);
 
@@ -60,12 +58,6 @@ public class MyInfoFragMain extends Fragment {
             @Override
             public void onClick(View v) {
                 sendingData.sendData(1);
-            }
-        });
-        message.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendingData.sendData(2);
             }
         });
         byebye.setOnClickListener(new View.OnClickListener() {

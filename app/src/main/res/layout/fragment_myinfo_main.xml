@@ -3,35 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageView
-        android:id="@+id/message"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginBottom="38dp"
-        app:layout_constraintBottom_toTopOf="@+id/byebye"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alarm"
-        app:srcCompat="@drawable/message" />
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp">
 
     <ImageView
         android:id="@+id/byebye"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginBottom="39dp"
+        android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toTopOf="@+id/logout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/message"
+        app:layout_constraintStart_toStartOf="@+id/logout"
+        app:layout_constraintTop_toBottomOf="@+id/alarm"
         app:srcCompat="@drawable/byebye" />
 
     <ImageView
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginBottom="124dp"
+        android:layout_marginBottom="67dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,9 +31,9 @@
         android:id="@+id/alarm"
         android:layout_width="237dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="35dp"
-        android:layout_marginTop="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/message"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="141dp"
+        app:layout_constraintBottom_toTopOf="@+id/byebye"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

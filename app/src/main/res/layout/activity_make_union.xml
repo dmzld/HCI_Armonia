@@ -67,7 +67,7 @@
         android:layout_height="20dp"
         android:layout_marginLeft="160dp"
         android:layout_marginTop="250dp"
-        android:text="연합 동아리 명" />
+        android:text="연합할 동아리 명" />
 
     <EditText
         android:id="@+id/union_content"

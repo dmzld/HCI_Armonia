@@ -54,6 +54,8 @@ public class SearchFrag extends Fragment {
     private static final String TAG_clubName = "ClubName";
     private static final String TAG_category = "Category";
 
+    AdapterListClub myListAdapter;
+    ArrayList<ListClub> list_clubArrayList;
     JSONArray list = null;
 
     static String curEmail="curEmail";
@@ -79,6 +81,7 @@ public class SearchFrag extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -120,8 +123,8 @@ public class SearchFrag extends Fragment {
         btnAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchAllClub.php",category);
+                category="0";
+                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchClub.php","0");
             }
         });
 
@@ -183,8 +186,10 @@ public class SearchFrag extends Fragment {
             JSONObject jsonObj = new JSONObject(myJSON);
             list = jsonObj.getJSONArray(TAG_RESULTS);
 
+
             listClubArrayList.clear();
             for (int i = 0; i < list.length(); i++) {
+
                 JSONObject c = list.getJSONObject(i);
 
                 String clubName = c.getString(TAG_clubName);
@@ -193,6 +198,11 @@ public class SearchFrag extends Fragment {
                 ListClub lists = new ListClub(R.mipmap.ic_launcher, clubName, category);
                 listClubArrayList.add(lists);
             }
+            int a =listClubArrayList.size();
+            String b = String.valueOf(a);
+            Log.i("check",""+a);
+
+
             adapaterListClub = new AdapterListClub(getActivity(), listClubArrayList);
             listClubView.setAdapter(adapaterListClub);
             adapaterListClub.notifyDataSetChanged();
