@@ -44,7 +44,7 @@
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/clubDesc"
+        android:id="@+id/clubInfo"
         android:layout_width="328dp"
         android:layout_height="274dp"
         android:layout_alignParentBottom="true"

@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/subarmonia">
 
 
     <TextView
@@ -11,26 +12,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="71dp"
-        android:text="내가속한동아리" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Armonia"
-        android:textSize="30sp" />
+        android:layout_marginTop="112dp"
+        android:text="  내가속한동아리"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/list_myClub"
         android:layout_width="match_parent"
-        android:layout_height="380dp"
+        android:layout_height="356dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="108dp"
+        android:layout_below="@+id/text_registeredClub"
         android:layout_weight="1" />
 
 </RelativeLayout>

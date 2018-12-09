@@ -69,6 +69,11 @@ public class MyClubFrag extends Fragment {
         //RelativeLayout myClubFrag = (RelativeLayout)inflater.inflate(R.layout.frag_myclub, container, false);
         View view = inflater.inflate(R.layout.frag_myclub, container, false);
 
+        if(getArguments()!=null){
+            email=getArguments().getString(curEmail);
+            user=getArguments().getString(curUser);
+        }
+
         listClubView = (ListView)view.findViewById(R.id.list_myClub);
         listClubArrayList = new ArrayList<ListClub>();
 

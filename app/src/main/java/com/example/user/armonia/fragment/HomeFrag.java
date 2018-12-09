@@ -56,6 +56,7 @@ public class HomeFrag extends Fragment {
         if(getArguments()!=null){
             email=getArguments().getString(curEmail);
             user=getArguments().getString(curUser);
+
         }
         textCurUser = (TextView)view.findViewById(R.id.textCurUser);
         textCurUser.setText(user+"님");

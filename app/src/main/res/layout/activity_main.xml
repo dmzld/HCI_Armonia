@@ -4,67 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/armonia"
     tools:context=".activity.MainActivity">
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="171dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="251dp"
-        android:hint="password" />
-
-    <Button
-        android:id="@+id/btnRegist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/password"
-
-        android:layout_marginBottom="201dp"
-        android:text="회원가입" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/btnRegist"
-        android:layout_marginEnd="84dp"
-        android:text="로그인" />
-
-    <EditText
-        android:id="@+id/id"
-        android:layout_width="177dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="164dp"
-        android:hint="id" />
+        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="14dp"
+        android:text="빠르게" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/Google_Login"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/password"
-        android:layout_marginBottom="137dp">
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="231dp">
 
     </com.google.android.gms.common.SignInButton>
 
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/Facebook_Login"
-        android:layout_width="200dp"
-        android:layout_height="150dp"
-        android:layout_alignEnd="@+id/btnLogin"
+        android:layout_width="199dp"
+        android:layout_height="52dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="89dp"
+        android:layout_alignStart="@+id/Google_Login"
+        android:layout_marginBottom="166dp"
         android:paddingBottom="10dp"
         android:paddingTop="10dp" />
 

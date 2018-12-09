@@ -51,9 +51,9 @@ public class SearchFrag extends Fragment {
     //server
     String myJSON;
     private static final String TAG_RESULTS = "result";
-
     private static final String TAG_clubName = "ClubName";
     private static final String TAG_category = "Category";
+
     JSONArray list = null;
 
     static String curEmail="curEmail";
@@ -84,6 +84,10 @@ public class SearchFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
 
+        if(getArguments()!=null){
+            email=getArguments().getString(curEmail);
+            user=getArguments().getString(curUser);
+        }
 
         btnAll = (Button) view.findViewById(R.id.btnAll);
         btnStudent = (Button) view.findViewById(R.id.btnStudent);
@@ -100,12 +104,15 @@ public class SearchFrag extends Fragment {
 
         listClubView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
                 Intent intent = new Intent(getActivity(), ClubPageActivity.class);
                 //db로 클릭한 동아리 정보를 같이 건네서 해당 동아리 페이지로 가야함
                 //지금은 일단 그냥 클럽 액티비티로
-                intent.putExtra("club_name", "볼랜드");
+                intent.putExtra("email",email);
+                intent.putExtra("user",user);
+                intent.putExtra("clubName", listClubArrayList.get(position).getClub_name());
+                intent.putExtra("clubCategory",listClubArrayList.get(position).getClub_category());
                 startActivity(intent);
             }
         });
@@ -188,7 +195,7 @@ public class SearchFrag extends Fragment {
             }
             adapaterListClub = new AdapterListClub(getActivity(), listClubArrayList);
             listClubView.setAdapter(adapaterListClub);
-            //adapaterListClub.notifyDataSetChanged();
+            adapaterListClub.notifyDataSetChanged();
         } catch (JSONException e) {
             e.printStackTrace();
         }

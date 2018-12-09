@@ -4,27 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.SearchFrag">
+    tools:context=".fragment.SearchFrag"
+    android:background="@drawable/subarmonia">
 
     <!-- TODO: Update blank fragment layout -->
-
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp" />
 
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/list_club"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="120dp"
         android:scrollbars="none">
 
         <LinearLayout
+            android:id="@+id/linear"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal">
@@ -34,6 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/btn"
                 android:text="전체" />
 
             <Button
@@ -41,6 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/btn"
                 android:text="학생회" />
 
             <Button
@@ -48,6 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/btn"
                 android:text="학술" />
 
             <Button
@@ -55,6 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/btn"
                 android:text="스포츠" />
 
             <Button
@@ -62,18 +59,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/btn"
                 android:text="예술" />
 
             <Button
                 android:id="@+id/btnSocial"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/btn"
                 android:text="사회활동" />
 
             <Button
                 android:id="@+id/btnEtc"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/btn"
                 android:text="기타" />
         </LinearLayout>
     </HorizontalScrollView>
@@ -82,9 +82,17 @@
         android:id="@+id/list_club"
         android:layout_width="match_parent"
         android:layout_height="337dp"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="71dp" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="234dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/list_club"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="180dp" />
+        android:layout_marginTop="-71dp" />
 
 
 </RelativeLayout>

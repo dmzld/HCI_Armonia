@@ -62,17 +62,17 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        id = (EditText) findViewById(R.id.id);
-        password = (EditText) findViewById(R.id.password);
-
-        btnRegist = (Button) findViewById(R.id.btnRegist);
-        btnRegist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), RegistActivity.class);
-                startActivityForResult(intent,1000);
-            }
-        });
+//        id = (EditText) findViewById(R.id.id);
+//        password = (EditText) findViewById(R.id.password);
+//
+//        btnRegist = (Button) findViewById(R.id.btnRegist);
+//        btnRegist.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getApplicationContext(), RegistActivity.class);
+//                startActivityForResult(intent,1000);
+//            }
+//        });
 
         btnLogin = (Button) findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(new View.OnClickListener() {
