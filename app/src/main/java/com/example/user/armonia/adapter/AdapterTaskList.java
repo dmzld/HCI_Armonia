@@ -42,7 +42,7 @@ public class AdapterTaskList extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup viewGroup) {
         if(convertView==null){
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_club,null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_task,null);
 
             task_title=(TextView)convertView.findViewById(R.id.task_title);
             task_content=(TextView)convertView.findViewById(R.id.task_content);

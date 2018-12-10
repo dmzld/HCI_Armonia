@@ -5,9 +5,7 @@ public class ListTask {
     private String TaskContent;
 
 
-    public String getTask_Title() {
-        return TaskTitle;
-    }
+    public String getTask_Title() {return TaskTitle; }
 
     public void setTask_Title(String task_title) {
         this.TaskTitle = task_title;
