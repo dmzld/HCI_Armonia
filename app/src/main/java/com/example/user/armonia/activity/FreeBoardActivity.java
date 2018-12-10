@@ -40,6 +40,7 @@ public class FreeBoardActivity extends AppCompatActivity {
     private static final String TAG_title = "Title";
     private static final String TAG_name = "User";
     private static final String TAG_date = "Date";
+    private static final String TAG_content = "Content";
     JSONArray list = null;
 
     @Override
@@ -93,7 +94,8 @@ public class FreeBoardActivity extends AppCompatActivity {
                 String title = c.getString(TAG_title);
                 String name = c.getString(TAG_name);
                 String date = c.getString(TAG_date);
-                ListPost freePost = new ListPost(title,name,date);
+                String content = c.getString(TAG_content);
+              ListPost freePost = new ListPost(title,name,date,content);
                 freeArrayList.add(freePost);
             }
             Collections.reverse(freeArrayList);

@@ -46,15 +46,16 @@ public class AdapterListClub extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup viewGroup) {
         if(convertView==null){
             convertView = LayoutInflater.from(context).inflate(R.layout.item_club,null);
-
-            text_clubName=(TextView)convertView.findViewById(R.id.club_name);
-            text_clubCategory=(TextView)convertView.findViewById(R.id.club_category);
-            image_club=(ImageView)convertView.findViewById(R.id.image_club);
-
-            text_clubName.setText(listCLubArrayList.get(position).getClub_name());
-            text_clubCategory.setText(listCLubArrayList.get(position).getClub_category());
-            image_club.setImageResource(listCLubArrayList.get(position).getImage_club());
         }
+
+        text_clubName=(TextView)convertView.findViewById(R.id.club_name);
+        text_clubCategory=(TextView)convertView.findViewById(R.id.club_category);
+        image_club=(ImageView)convertView.findViewById(R.id.image_club);
+
+        text_clubName.setText(listCLubArrayList.get(position).getClub_name());
+        text_clubCategory.setText(listCLubArrayList.get(position).getClub_category());
+        image_club.setImageResource(listCLubArrayList.get(position).getImage_club());
+
         return convertView;
     }
 }

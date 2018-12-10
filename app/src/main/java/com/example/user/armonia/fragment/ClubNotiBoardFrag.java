@@ -53,16 +53,16 @@ public class ClubNotiBoardFrag extends Fragment {
 
         // 아직 DB 연동 안함
 
-        notiArrayList.add(new ListPost("1번째 글","이주형","2018/12/05"));
-        notiArrayList.add(new ListPost("2번째 글","이주형","2018/12/05"));
-        notiArrayList.add(new ListPost("3번째 글","이주형","2018/12/05"));
-        notiArrayList.add(new ListPost("4번째 글","이주형","2018/12/05"));
-        notiArrayList.add(new ListPost("5번째 글","이주형","2018/12/05"));
-        notiArrayList.add(new ListPost("6번째 글","이주형","2018/12/05"));
-        notiArrayList.add(new ListPost("7번째 글","이주형","2018/12/05"));
-        notiArrayList.add(new ListPost("8번째 글","이주형","2018/12/05"));
-        notiArrayList.add(new ListPost("9번째 글","이주형","2018/12/05"));
-        notiArrayList.add(new ListPost("10번째 글","이주형","2018/12/05"));
+        notiArrayList.add(new ListPost("1번째 글","이주형","2018/12/05","null"));
+        notiArrayList.add(new ListPost("2번째 글","이주형","2018/12/05","null"));
+        notiArrayList.add(new ListPost("3번째 글","이주형","2018/12/05","null"));
+        notiArrayList.add(new ListPost("4번째 글","이주형","2018/12/05","null"));
+        notiArrayList.add(new ListPost("5번째 글","이주형","2018/12/05","null"));
+        notiArrayList.add(new ListPost("6번째 글","이주형","2018/12/05","null"));
+        notiArrayList.add(new ListPost("7번째 글","이주형","2018/12/05","null"));
+        notiArrayList.add(new ListPost("8번째 글","이주형","2018/12/05","null"));
+        notiArrayList.add(new ListPost("9번째 글","이주형","2018/12/05","null"));
+        notiArrayList.add(new ListPost("10번째 글","이주형","2018/12/05","null"));
 
 
 

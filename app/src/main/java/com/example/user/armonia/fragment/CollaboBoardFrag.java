@@ -58,14 +58,14 @@ public class CollaboBoardFrag extends Fragment {
 
         // 아직 DB 연동 안함
 
-        collaArrayList.add(new ListPost("1번째 글","이주형","2018/12/05"));
-        collaArrayList.add(new ListPost("2번째 글","이주형","2018/12/05"));
-        collaArrayList.add(new ListPost("3번째 글","이주형","2018/12/05"));
-        collaArrayList.add(new ListPost("4번째 글","이주형","2018/12/05"));
-        collaArrayList.add(new ListPost("5번째 글","이주형","2018/12/05"));
-        collaArrayList.add(new ListPost("6번째 글","이주형","2018/12/05"));
-        collaArrayList.add(new ListPost("7번째 글","이주형","2018/12/05"));
-        collaArrayList.add(new ListPost("8번째 글","이주형","2018/12/05"));
+        collaArrayList.add(new ListPost("1번째 글","이주형","2018/12/05","null"));
+        collaArrayList.add(new ListPost("2번째 글","이주형","2018/12/05","null"));
+        collaArrayList.add(new ListPost("3번째 글","이주형","2018/12/05","null"));
+        collaArrayList.add(new ListPost("4번째 글","이주형","2018/12/05","null"));
+        collaArrayList.add(new ListPost("5번째 글","이주형","2018/12/05","null"));
+        collaArrayList.add(new ListPost("6번째 글","이주형","2018/12/05","null"));
+        collaArrayList.add(new ListPost("7번째 글","이주형","2018/12/05","null"));
+        collaArrayList.add(new ListPost("8번째 글","이주형","2018/12/05","null"));
 
 
 

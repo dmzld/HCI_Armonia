@@ -56,6 +56,7 @@ public class HomeFrag extends Fragment {
         if(getArguments()!=null){
             email=getArguments().getString(curEmail);
             user=getArguments().getString(curUser);
+
         }
         textCurUser = (TextView)view.findViewById(R.id.textCurUser);
         textCurUser.setText(user+"님");
@@ -70,11 +71,11 @@ public class HomeFrag extends Fragment {
 
 
         // 아직 DB 연동 안함
-        homeClubArrayList.add(new ListPost("1번째 홈클럽글","이주형","2018/12/05"));
-        homeClubArrayList.add(new ListPost("1번째 글","이주형","2018/12/05"));
-        homeClubArrayList.add(new ListPost("1번째 글","이주형","2018/12/05"));
-        homeClubArrayList.add(new ListPost("1번째 글","이주형","2018/12/05"));
-        homeClubArrayList.add(new ListPost("1번째 글","이주형","2018/12/05"));
+        homeClubArrayList.add(new ListPost("1번째 홈클럽글","이주형","2018/12/05","null"));
+        homeClubArrayList.add(new ListPost("1번째 글","이주형","2018/12/05","null"));
+        homeClubArrayList.add(new ListPost("1번째 글","이주형","2018/12/05","null"));
+        homeClubArrayList.add(new ListPost("1번째 글","이주형","2018/12/05","null"));
+        homeClubArrayList.add(new ListPost("1번째 글","이주형","2018/12/05","null"));
 
         adapterListHomeClub = new AdapterListPost(getActivity(),homeClubArrayList);
         listHomeClubView.setAdapter(adapterListHomeClub);
@@ -101,11 +102,11 @@ public class HomeFrag extends Fragment {
         btnMoreFree = (Button)view.findViewById(R.id.btnMoreFree);
 
         // 아직 DB 연동 안함
-        freeArrayList.add(new ListPost("1번째 자유글","이주형","2018/12/05"));
-        freeArrayList.add(new ListPost("2번째 글","이주형","2018/12/05"));
-        freeArrayList.add(new ListPost("3번째 글","이주형","2018/12/05"));
-        freeArrayList.add(new ListPost("4번째 글","이주형","2018/12/05"));
-        freeArrayList.add(new ListPost("5번째 글","이주형","2018/12/05"));
+        freeArrayList.add(new ListPost("1번째 자유글","이주형","2018/12/05","null"));
+        freeArrayList.add(new ListPost("2번째 글","이주형","2018/12/05","null"));
+        freeArrayList.add(new ListPost("3번째 글","이주형","2018/12/05","null"));
+        freeArrayList.add(new ListPost("4번째 글","이주형","2018/12/05","null"));
+        freeArrayList.add(new ListPost("5번째 글","이주형","2018/12/05","null"));
 
         adapterListFree = new AdapterListPost(getActivity(),freeArrayList);
         listFreeView.setAdapter(adapterListFree);

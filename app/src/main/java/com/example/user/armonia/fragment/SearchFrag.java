@@ -50,10 +50,14 @@ public class SearchFrag extends Fragment {
 
     //server
     String myJSON;
-    private  final String TAG_RESULTS = "result";
+
+    private static final String TAG_RESULTS = "result";
 
     private static final String TAG_clubName = "ClubName";
     private static final String TAG_category = "Category";
+
+    AdapterListClub myListAdapter;
+    ArrayList<ListClub> list_clubArrayList;
     JSONArray list = null;
 
     static String curEmail="curEmail";
@@ -74,16 +78,20 @@ public class SearchFrag extends Fragment {
     AdapterListClub adapaterListClub;
     ArrayList<ListClub> listClubArrayList;
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
 
+        if(getArguments()!=null){
+            email=getArguments().getString(curEmail);
+            user=getArguments().getString(curUser);
+        }
 
         btnAll = (Button) view.findViewById(R.id.btnAll);
         btnStudent = (Button) view.findViewById(R.id.btnStudent);
@@ -100,12 +108,15 @@ public class SearchFrag extends Fragment {
 
         listClubView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
                 Intent intent = new Intent(getActivity(), ClubPageActivity.class);
                 //db로 클릭한 동아리 정보를 같이 건네서 해당 동아리 페이지로 가야함
                 //지금은 일단 그냥 클럽 액티비티로
-                intent.putExtra("club_name", "볼랜드");
+                intent.putExtra("email",email);
+                intent.putExtra("user",user);
+                intent.putExtra("clubName", listClubArrayList.get(position).getClub_name());
+                intent.putExtra("clubCategory",listClubArrayList.get(position).getClub_category());
                 startActivity(intent);
             }
         });
@@ -113,8 +124,8 @@ public class SearchFrag extends Fragment {
         btnAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchAllClub.php",category);
+                category="0";
+                getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchClub.php","0");
             }
         });
 
@@ -127,6 +138,8 @@ public class SearchFrag extends Fragment {
             }
         });
 
+
+        //$category = $_POST['category'];
         btnStudy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -176,8 +189,10 @@ public class SearchFrag extends Fragment {
             JSONObject jsonObj = new JSONObject(myJSON);
             list = jsonObj.getJSONArray(TAG_RESULTS);
 
+
             listClubArrayList.clear();
             for (int i = 0; i < list.length(); i++) {
+
                 JSONObject c = list.getJSONObject(i);
 
                 String clubName = c.getString(TAG_clubName);
@@ -187,11 +202,22 @@ public class SearchFrag extends Fragment {
                 listClubArrayList.add(lists);
             }
 
+
             adapaterListClub = new AdapterListClub(getActivity(), listClubArrayList);
             listClubView.setAdapter(adapaterListClub);
 
            adapaterListClub.notifyDataSetChanged();
 
+
+
+            int a =listClubArrayList.size();
+            String b = String.valueOf(a);
+            Log.i("check",""+a);
+
+
+            adapaterListClub = new AdapterListClub(getActivity(), listClubArrayList);
+            listClubView.setAdapter(adapaterListClub);
+            adapaterListClub.notifyDataSetChanged();
 
         } catch (JSONException e) {
             e.printStackTrace();

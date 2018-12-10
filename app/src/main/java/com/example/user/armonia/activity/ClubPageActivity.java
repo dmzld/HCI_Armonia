@@ -17,11 +17,14 @@ import com.example.user.armonia.fragment.ClubCalendarFrag;
 import com.example.user.armonia.fragment.ClubHomeFrag;
 import com.example.user.armonia.fragment.ClubNotiBoardFrag;
 
+
 public class ClubPageActivity extends AppCompatActivity {
 //ClubHomeFrag, NotiBoardFrag, ClubCalendarFrag, ClubAlbumFrag, ClubBoardFrag를 갖는다
 
     private String email;
     private String user;
+    private String clubName;
+    private String clubCategory;
 
 
 
@@ -39,7 +42,8 @@ public class ClubPageActivity extends AppCompatActivity {
         Intent intent = getIntent();
         email = intent.getStringExtra("email");
         user = intent.getStringExtra("user");
-
+        clubName = intent.getStringExtra("clubName");
+        clubCategory = intent.getStringExtra("clubCategory");
 
         fragmentClubManager = getSupportFragmentManager();
 
@@ -50,7 +54,7 @@ public class ClubPageActivity extends AppCompatActivity {
         //첫 화면에 home fragment 만들기
         fragmentClubManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentClubManager.beginTransaction();
-        transaction.add(R.id.club_fragment_container, ClubHomeFrag.newInstance()).commit();
+        transaction.add(R.id.club_fragment_container, ClubHomeFrag.newInstance(email,user,clubName,clubCategory)).commit();
 
     }
 
@@ -61,7 +65,7 @@ public class ClubPageActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.menuitem_bottombar_home:
-                    replaceFragment(ClubHomeFrag.newInstance());
+                    replaceFragment(ClubHomeFrag.newInstance(email,user,clubName,clubCategory));
                     return true;
 
                 case R.id.menuitem_bottombar_notification_board:

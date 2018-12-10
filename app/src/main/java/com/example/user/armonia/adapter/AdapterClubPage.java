@@ -50,18 +50,20 @@ public class AdapterClubPage extends BaseAdapter {
         if(convertView==null){
             convertView = LayoutInflater.from(context).inflate(R.layout.item_club_page,null);
 
-            text_title=(TextView)convertView.findViewById(R.id.title);
-            text_writer=(TextView)convertView.findViewById(R.id.writer);
-            text_contents=(TextView)convertView.findViewById(R.id.contents);
-            text_date=(TextView)convertView.findViewById(R.id.date);
-            image=(ImageView)convertView.findViewById(R.id.image_club);
 
-            text_title.setText(listClubPageArrayList.get(position).getTitle());
-            text_writer.setText(listClubPageArrayList.get(position).getWriter());
-            text_contents.setText(listClubPageArrayList.get(position).getContents());
-            text_date.setText(listClubPageArrayList.get(position).getDate());
-            image.setImageResource(listClubPageArrayList.get(position).getImage());
         }
+
+        text_title=(TextView)convertView.findViewById(R.id.title);
+        text_writer=(TextView)convertView.findViewById(R.id.writer);
+        text_contents=(TextView)convertView.findViewById(R.id.contents);
+        text_date=(TextView)convertView.findViewById(R.id.date);
+        image=(ImageView)convertView.findViewById(R.id.image_club);
+
+        text_title.setText(listClubPageArrayList.get(position).getTitle());
+        text_writer.setText(listClubPageArrayList.get(position).getWriter());
+        text_contents.setText(listClubPageArrayList.get(position).getContents());
+        text_date.setText(listClubPageArrayList.get(position).getDate());
+        image.setImageResource(listClubPageArrayList.get(position).getImage());
         return convertView;
     }
 }

@@ -74,10 +74,10 @@ public class ClubBoardFrag extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
                 Intent intent = new Intent(getActivity(), PostActivity.class);
-                intent.putExtra("title",postArrayList.get(position).getPost_Title());
-                intent.putExtra("date",postArrayList.get(position).getPost_Date());
-                intent.putExtra("name",postArrayList.get(position).getPost_Name());
-                intent.putExtra("content",postArrayList.get(position).get)
+                intent.putExtra("Title",postArrayList.get(position).getPost_Title());
+                intent.putExtra("Date",postArrayList.get(position).getPost_Date());
+                intent.putExtra("User",postArrayList.get(position).getPost_Name());
+                intent.putExtra("Content",postArrayList.get(position).getPost_content());
                 startActivity(intent);
             }
         });
@@ -99,7 +99,7 @@ public class ClubBoardFrag extends Fragment {
                 String name = c.getString(TAG_name);
                 String date = c.getString(TAG_date);
                 String content = c.getString(TAG_content);
-                ListPost clubPost = new ListPost(title,name,date);
+                ListPost clubPost = new ListPost(title,"작성일"+"\n"+date,"작성자"+"\n"+name,"내용"+"\n"+content);
                 postArrayList.add(clubPost);
             }
             Collections.reverse(postArrayList);

@@ -24,7 +24,6 @@ import com.example.user.armonia.MyInfoAlarmFrag;
 import com.example.user.armonia.MyInfoByeByeFrag;
 import com.example.user.armonia.MyInfoChangePassword;
 import com.example.user.armonia.MyInfoFragMain;
-import com.example.user.armonia.MyInfoMessageFrag;
 import com.example.user.armonia.R;
 
 import java.io.InputStream;
@@ -74,7 +73,6 @@ public class MyInfoActivity extends AppCompatActivity implements MyInfoFragMain.
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.add(R.id.fragment_container, MyInfoFragMain.newInstance()).commitNow();
-
     }
     @Override
     protected  void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -83,9 +81,6 @@ public class MyInfoActivity extends AppCompatActivity implements MyInfoFragMain.
                 try {
                     InputStream in = getContentResolver().openInputStream(data.getData());
                     Bitmap img = BitmapFactory.decodeStream(in);
-
-
-
                     in.close();
                     img_myinfo.setImageBitmap(img);
                     change_img.setImageBitmap(img);
@@ -132,7 +127,7 @@ public class MyInfoActivity extends AppCompatActivity implements MyInfoFragMain.
         if(data ==1){
             replaceFragment(MyInfoAlarmFrag.newInstance());
         } else if(data ==2){
-            replaceFragment(MyInfoMessageFrag.newInstance());
+//            replaceFragment(MyInfoMessageFrag.newInstance());
         } else if(data ==3){
             replaceFragment(MyInfoByeByeFrag.newInstance());
         } else {
@@ -159,6 +154,7 @@ public class MyInfoActivity extends AppCompatActivity implements MyInfoFragMain.
     private void replaceFragment(Fragment fragment) {
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.replace(R.id.fragment_container, fragment).commit();
     }
 }
