@@ -71,4 +71,32 @@
         android:layout_marginEnd="22dp"
         android:src="@drawable/union" />
 
+    <Button
+        android:id="@+id/btnCreatBoard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/button_make_union"
+        android:layout_alignTop="@+id/btnClubPro"
+        android:background="@drawable/buttonshape"
+        android:text="게시판만들기" />
+
+    <Button
+        android:id="@+id/btnClubPro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/button_my_info"
+        android:layout_marginTop="420dp"
+        android:background="@drawable/buttonshape"
+        android:text="홍보게시판" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnClubPro"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/buttonshape"
+        android:text="동아리창설게시판" />
+
 </RelativeLayout>
