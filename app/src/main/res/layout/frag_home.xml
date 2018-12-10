@@ -45,10 +45,10 @@
 
     <Button
         android:id="@+id/btnMoreFree"
-        android:layout_width="60dp"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/union_club_baord_textwiev"
+        android:layout_below="@+id/listHomeFreeView"
         android:background="@drawable/buttonshape"
         android:text="더보기"
         android:textSize="14sp" />
