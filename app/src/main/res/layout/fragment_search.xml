@@ -31,7 +31,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/btn"
+                    android:background="@drawable/buttonshape"
                     android:text="전체" />
 
                 <Button
@@ -39,7 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/btn"
+                    android:background="@drawable/buttonshape"
                     android:text="학생회" />
 
                 <Button
@@ -47,7 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/btn"
+                    android:background="@drawable/buttonshape"
                     android:text="학술" />
 
                 <Button
@@ -55,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/btn"
+                    android:background="@drawable/buttonshape"
                     android:text="스포츠" />
 
                 <Button
@@ -63,21 +63,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/btn"
+                    android:background="@drawable/buttonshape"
                     android:text="예술" />
 
                 <Button
                     android:id="@+id/btnSocial"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/btn"
+                    android:background="@drawable/buttonshape"
                     android:text="사회활동" />
 
                 <Button
                     android:id="@+id/btnEtc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/btn"
+                    android:background="@drawable/buttonshape"
                     android:text="기타" />
             </LinearLayout>
         </HorizontalScrollView>

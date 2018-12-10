@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.user.armonia.R;
 import com.example.user.armonia.activity.PostActivity;
@@ -20,6 +21,7 @@ import com.example.user.armonia.list.ListPost;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -37,6 +39,7 @@ public class ClubBoardFrag extends Fragment {
     ListView listPostView;
     AdapterListPost adapterListPost;
     ArrayList<ListPost> postArrayList;
+    TextView textClubBoard;
 
     //server
     String myJSON;
@@ -47,9 +50,26 @@ public class ClubBoardFrag extends Fragment {
     private static final String TAG_content = "Content";
     JSONArray list = null;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
+    static String curEmail="curEmail";
+    static String curUser="curUser";
+    static String curClubName="curClubName";
+    static String curCategory="curCategory";
+    String email;
+    String user;
+    String clubName;
+    String category;
+
+
+    public static ClubBoardFrag newInstance(String email, String user, String clubName, String category) {
+        ClubBoardFrag clubBoardFrag = new ClubBoardFrag();
+        Bundle args = new Bundle();
+        args.putString(curEmail,email);
+        args.putString(curUser,user);
+        args.putString(curClubName,clubName);
+        args.putString(curCategory,category);
+        clubBoardFrag.setArguments(args);
+        return clubBoardFrag;
     }
 
     @Override
@@ -57,8 +77,19 @@ public class ClubBoardFrag extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_club_board, container, false);
 
+        if(getArguments()!=null){
+            email=getArguments().getString(curEmail);
+            user=getArguments().getString(curUser);
+            clubName=getArguments().getString(curClubName);
+            category=getArguments().getString(curCategory);
+        }
+
         listPostView = (ListView)view.findViewById(R.id.listClubBoardView);
         postArrayList = new ArrayList<ListPost>();
+
+        textClubBoard = (TextView)view.findViewById(R.id.textClubBoard);
+        textClubBoard.setText(clubName+" 공지사항");
+
         btnWrite = (Button)view.findViewById(R.id.btnWrite);
         btnWrite.setOnClickListener(new View.OnClickListener() {
             @Override

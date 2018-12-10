@@ -12,25 +12,30 @@
         <ListView
             android:id="@+id/listNotiView"
             android:layout_width="match_parent"
-            android:layout_height="458dp"
+            android:layout_height="420dp"
+            android:layout_below="@id/textNoti"
+            android:layout_marginTop="20dp"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView10" />
+            android:layout_centerVertical="true" />
 
         <Button
             android:id="@+id/btnWrite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/listNotiView"
+            android:background="@drawable/buttonshape"
             android:text="글쓰기" />
 
         <TextView
-            android:id="@+id/textView10"
-            android:layout_width="119dp"
-            android:layout_height="33dp"
-            android:layout_alignParentStart="true"
+            android:id="@+id/textNoti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:text="공지사항" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="19dp"
+            android:text="공지사항"
+            android:textSize="24sp" />
     </RelativeLayout>
 
 </FrameLayout>
