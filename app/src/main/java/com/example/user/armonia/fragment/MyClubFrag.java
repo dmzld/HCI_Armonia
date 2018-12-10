@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +59,7 @@ public class MyClubFrag extends Fragment {
     private static final String TAG_RESULTS = "result";
     private static final String TAG_clubName = "ClubName";
     private static final String TAG_category = "Category";
+    private static final String TAG_clubInfo = "ClubInfo";
 
     JSONArray list = null;
 
@@ -75,7 +77,7 @@ public class MyClubFrag extends Fragment {
             email=getArguments().getString(curEmail);
             user=getArguments().getString(curUser);
         }
-
+        Log.i("username1","username : "+user);
         listClubView = (ListView)view.findViewById(R.id.list_myClub);
         listClubArrayList = new ArrayList<ListClub>();
 
@@ -91,6 +93,7 @@ public class MyClubFrag extends Fragment {
                 intent.putExtra("user",user);
                 intent.putExtra("clubName",listClubArrayList.get(position).getClub_name());
                 intent.putExtra("clubCategory",listClubArrayList.get(position).getClub_category());
+                intent.putExtra("clubInfo",listClubArrayList.get(position).getClub_info());
 
                 startActivity(intent);
             }
@@ -98,6 +101,7 @@ public class MyClubFrag extends Fragment {
 
 
 
+        Log.i("username2",user);
         //주소
         getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/myClubFrag.php",user);
 
@@ -115,7 +119,8 @@ public class MyClubFrag extends Fragment {
                 //image
                 String clubName = c.getString(TAG_clubName);
                 String category = c.getString(TAG_category);
-                ListClub myClub = new ListClub(R.mipmap.ic_launcher,clubName,category);
+                String clubInfo = c.getString(TAG_clubInfo);
+                ListClub myClub = new ListClub(R.mipmap.ic_launcher,clubName,category,clubInfo);
                 listClubArrayList.add(myClub);
             }
             adapterListClub_my = new AdapterListClub(getActivity(),listClubArrayList);

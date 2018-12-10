@@ -38,7 +38,7 @@ public class    ClubHomeFrag extends Fragment {
     ImageView imageClubImage;
     TextView textClubName;
     TextView textClubCategory;
-    //TextView textClubInfo;
+    TextView textClubInfo;
     Button btnClubApply;
 
     AdapterClubPage adapterClubPage;
@@ -55,18 +55,21 @@ public class    ClubHomeFrag extends Fragment {
     static String curUser="curUser";
     static String curClubName="curClubName";
     static String curCategory="curCategory";
+    static String curClubInfo="curClubInfo";
     String email;
     String user;
     String clubName;
     String category;
+    String clubInfo;
 
-    public static ClubHomeFrag newInstance(String email, String user, String clubName, String category) {
+    public static ClubHomeFrag newInstance(String email, String user, String clubName, String category, String clubInfo) {
         ClubHomeFrag clubHomeFrag = new ClubHomeFrag();
         Bundle args = new Bundle();
         args.putString(curEmail,email);
         args.putString(curUser,user);
         args.putString(curClubName,clubName);
         args.putString(curCategory,category);
+        args.putString(curClubInfo,clubInfo);
         clubHomeFrag.setArguments(args);
         return clubHomeFrag;
     }
@@ -86,17 +89,20 @@ public class    ClubHomeFrag extends Fragment {
             user=getArguments().getString(curUser);
             clubName=getArguments().getString(curClubName);
             category=getArguments().getString(curCategory);
+            clubInfo=getArguments().getString(curClubInfo);
         }
 
         imageClubImage=(ImageView)view.findViewById(R.id.clubImage);
         textClubName=(TextView)view.findViewById(R.id.clubName);
         textClubCategory=(TextView)view.findViewById(R.id.clubCategory);
-        //textClubInfo=(TextView)view.findViewById(R.id.clubInfo);
+        textClubInfo=(TextView)view.findViewById(R.id.clubInfo);
         btnClubApply = (Button)view.findViewById(R.id.btnClubApply);
 
         imageClubImage.setImageResource(R.mipmap.ic_launcher);
         textClubName.setText(clubName);
         textClubCategory.setText(category);
+        textClubInfo.setText(clubInfo);
+        //textClubInfo.setText();
 
 
         btnClubApply.setOnClickListener(new View.OnClickListener() {

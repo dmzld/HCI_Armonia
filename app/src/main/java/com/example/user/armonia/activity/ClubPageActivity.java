@@ -25,6 +25,7 @@ public class ClubPageActivity extends AppCompatActivity {
     private String user;
     private String clubName;
     private String clubCategory;
+    private String clubInfo;
 
 
 
@@ -44,6 +45,7 @@ public class ClubPageActivity extends AppCompatActivity {
         user = intent.getStringExtra("user");
         clubName = intent.getStringExtra("clubName");
         clubCategory = intent.getStringExtra("clubCategory");
+        clubInfo = intent.getStringExtra("clubInfo");
 
         fragmentClubManager = getSupportFragmentManager();
 
@@ -54,7 +56,7 @@ public class ClubPageActivity extends AppCompatActivity {
         //첫 화면에 home fragment 만들기
         fragmentClubManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentClubManager.beginTransaction();
-        transaction.add(R.id.club_fragment_container, ClubHomeFrag.newInstance(email,user,clubName,clubCategory)).commit();
+        transaction.add(R.id.club_fragment_container, ClubHomeFrag.newInstance(email,user,clubName,clubCategory,clubInfo)).commit();
 
     }
 
@@ -65,7 +67,7 @@ public class ClubPageActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.menuitem_bottombar_home:
-                    replaceFragment(ClubHomeFrag.newInstance(email,user,clubName,clubCategory));
+                    replaceFragment(ClubHomeFrag.newInstance(email,user,clubName,clubCategory,clubInfo));
                     return true;
 
                 case R.id.menuitem_bottombar_notification_board:
