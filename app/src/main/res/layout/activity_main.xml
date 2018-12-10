@@ -20,7 +20,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="13dp"
         android:layout_marginEnd="14dp"
-        android:text="빠르게" />
+        android:text="Skip" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/Google_Login"
