@@ -25,8 +25,10 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -97,7 +99,7 @@ public class MyClubFrag extends Fragment {
 
 
         //주소
-        getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/myClubFrag.php");
+        getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/myClubFrag.php",user);
 
         return view; // 여기서 UI를 생성해서 View를 return
     }
@@ -123,18 +125,28 @@ public class MyClubFrag extends Fragment {
         }
     }
 
-    public void getData(String url) {
+    public void getData(String url,String user) {
         class GetDataJSON extends AsyncTask<String, Void, String> {
 
             @Override
             protected String doInBackground(String... params) {
 
-                String uri = params[0];
 
                 BufferedReader bufferedReader = null;
                 try {
+
+                    String uri = params[0];
+                    String user = params[1];
+                    String data = URLEncoder.encode("user","UTF-8")+"="+URLEncoder.encode(user,"UTF-8");
+
                     URL url = new URL(uri);
                     HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                    con.setDoOutput(true);
+                    OutputStreamWriter wr = new OutputStreamWriter(con.getOutputStream());
+                    wr.write(data);
+                    wr.flush();
+
                     StringBuilder sb = new StringBuilder();
 
                     bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
@@ -157,7 +169,7 @@ public class MyClubFrag extends Fragment {
             }
         }
         GetDataJSON g = new GetDataJSON();
-        g.execute(url);
+        g.execute(url,user);
     }
 
 
