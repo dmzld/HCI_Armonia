@@ -12,26 +12,31 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView11"
-            android:layout_width="119dp"
-            android:layout_height="33dp"
-            android:layout_alignParentStart="true"
+            android:id="@+id/textClubBoard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:text="동아리자유게시판" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:text="동아리자유게시판"
+            android:textSize="24sp" />
 
         <ListView
             android:id="@+id/listClubBoardView"
             android:layout_width="match_parent"
-            android:layout_height="458dp"
+            android:layout_height="396dp"
+            android:layout_below="@id/textClubBoard"
+            android:layout_marginTop="20dp"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView11" />
+            android:layout_centerVertical="true" />
 
         <Button
             android:id="@+id/btnWrite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/listClubBoardView"
+            android:background="@drawable/buttonshape"
             android:text="글쓰기" />
     </RelativeLayout>
 </FrameLayout>

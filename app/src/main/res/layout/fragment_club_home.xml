@@ -20,11 +20,13 @@
 
     <Button
         android:id="@+id/btnClubApply"
-        android:layout_width="72dp"
-        android:layout_height="36dp"
-        android:layout_above="@+id/clubCategory"
-        android:layout_alignEnd="@+id/clubImage"
-        android:text="신청->탈퇴" />
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/clubCategory"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/buttonshape"
+        android:text="신청" />
 
     <TextView
         android:id="@+id/clubCategory"

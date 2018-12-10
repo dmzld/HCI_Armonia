@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.user.armonia.R;
 import com.example.user.armonia.activity.PostActivity;
@@ -27,11 +28,26 @@ public class ClubNotiBoardFrag extends Fragment {
     ListView listNotiView;
     AdapterListPost adapterListNoti;
     ArrayList<ListPost> notiArrayList;
+    TextView textNoti;
 
+    static String curEmail="curEmail";
+    static String curUser="curUser";
+    static String curClubName="curClubName";
+    static String curCategory="curCategory";
+    String email;
+    String user;
+    String clubName;
+    String category;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public static ClubNotiBoardFrag newInstance(String email, String user, String clubName, String category) {
+        ClubNotiBoardFrag clubNotiBoardFrag = new ClubNotiBoardFrag();
+        Bundle args = new Bundle();
+        args.putString(curEmail,email);
+        args.putString(curUser,user);
+        args.putString(curClubName,clubName);
+        args.putString(curCategory,category);
+        clubNotiBoardFrag.setArguments(args);
+        return clubNotiBoardFrag;
     }
 
     @Override
@@ -39,9 +55,20 @@ public class ClubNotiBoardFrag extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_club_noti_board, container, false);
 
+
+        if(getArguments()!=null){
+            email=getArguments().getString(curEmail);
+            user=getArguments().getString(curUser);
+            clubName=getArguments().getString(curClubName);
+            category=getArguments().getString(curCategory);
+        }
+
+
         listNotiView = (ListView)view.findViewById(R.id.listNotiView);
         notiArrayList = new ArrayList<ListPost>();
 
+        textNoti = (TextView)view.findViewById(R.id.textNoti);
+        textNoti.setText(clubName+" 공지사항");
         btnWrite = (Button)view.findViewById(R.id.btnWrite);
         btnWrite.setOnClickListener(new View.OnClickListener() {
             @Override

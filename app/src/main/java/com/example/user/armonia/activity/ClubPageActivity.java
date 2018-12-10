@@ -69,7 +69,7 @@ public class ClubPageActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.menuitem_bottombar_notification_board:
-                    replaceFragment(ClubNotiBoardFrag.newInstance());
+                    replaceFragment(ClubNotiBoardFrag.newInstance(email,user,clubName,clubCategory));
                     return true;
 
                 case R.id.menuitem_bottombar_calendar:
@@ -81,7 +81,7 @@ public class ClubPageActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.menuitem_bottombar_board:
-                    replaceFragment(ClubBoardFrag.newInstance());
+                    replaceFragment(ClubBoardFrag.newInstance(email,user,clubName,clubCategory));
                     return true;
 
             }
