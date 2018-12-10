@@ -33,6 +33,7 @@ public class ClubHomeFrag extends Fragment {
 
 
 
+    View rootVIew;
     //나중에 db에서 받아와서 저장하면됨
     ImageView imageClubImage;
     TextView textClubName;
@@ -79,7 +80,7 @@ public class ClubHomeFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_club_home, container, false);
-
+        rootVIew = view;
         if(getArguments()!=null){
             email=getArguments().getString(curEmail);
             user=getArguments().getString(curUser);
@@ -108,7 +109,7 @@ public class ClubHomeFrag extends Fragment {
 
         //주소
         //클럽이름으로 해당 클럽 내용
-        //getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/ClubHomeage.php", clubName);
+        //getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/clubHomeFrag.php", clubName);
         return view;
     }
 
@@ -132,7 +133,7 @@ public class ClubHomeFrag extends Fragment {
 //                ClubInfo = c.getString(TAG_ClubInfo);
 //                Log.i("club_describe",ClubInfo);
 //            }
-//            TextView Info = (TextView)getActivity().findViewById(R.id.clubInfo) ;
+//            TextView Info = (TextView)rootVIew.findViewById(R.id.clubInfo) ;
 //            Info.setText("동아리 소개"+"\n"+ClubInfo);
 //
 //        } catch (JSONException e) {

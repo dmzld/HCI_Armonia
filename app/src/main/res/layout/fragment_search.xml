@@ -5,94 +5,101 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.SearchFrag"
-    android:background="@drawable/subarmonia">
+    android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <HorizontalScrollView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/list_club"
-        android:layout_alignParentStart="true"
-        android:scrollbars="none">
+        android:layout_height="match_parent"
+        android:background="@drawable/subarmonia">
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:scrollbars="none">
 
-        <LinearLayout
-            android:id="@+id/linear"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btnAll"
+            <LinearLayout
+                android:id="@+id/linear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn"
-                android:text="전체" />
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btnStudent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn"
-                android:text="학생회" />
+                <Button
+                    android:id="@+id/btnAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn"
+                    android:text="전체" />
 
-            <Button
-                android:id="@+id/btnStudy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn"
-                android:text="학술" />
+                <Button
+                    android:id="@+id/btnStudent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn"
+                    android:text="학생회" />
 
-            <Button
-                android:id="@+id/btnSport"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn"
-                android:text="스포츠" />
+                <Button
+                    android:id="@+id/btnStudy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn"
+                    android:text="학술" />
 
-            <Button
-                android:id="@+id/btnArt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn"
-                android:text="예술" />
+                <Button
+                    android:id="@+id/btnSport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn"
+                    android:text="스포츠" />
 
-            <Button
-                android:id="@+id/btnSocial"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn"
-                android:text="사회활동" />
+                <Button
+                    android:id="@+id/btnArt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn"
+                    android:text="예술" />
 
-            <Button
-                android:id="@+id/btnEtc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn"
-                android:text="기타" />
-        </LinearLayout>
-    </HorizontalScrollView>
+                <Button
+                    android:id="@+id/btnSocial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn"
+                    android:text="사회활동" />
 
-    <ListView
-        android:id="@+id/list_club"
-        android:layout_width="match_parent"
-        android:layout_height="337dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="71dp" />
+                <Button
+                    android:id="@+id/btnEtc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn"
+                    android:text="기타" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <ListView
+            android:id="@+id/list_club"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginBottom="100dp"
+            />
+
+    </LinearLayout>
 
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="234dp"
         android:layout_height="35dp"
-        android:layout_below="@+id/list_club"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-71dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        />
 
 
 </RelativeLayout>

@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="209dp"
+        android:layout_marginTop="150dp"
         android:background="#2f5cff"
         android:text="동아리 생성"
         android:textColor="@android:color/background_light" />
@@ -29,9 +29,9 @@
         android:id="@+id/button_make_union"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="227dp"
+        android:layout_marginTop="250dp"
         android:background="#2f5cff"
         android:text="연합 생성"
         android:textColor="@android:color/background_light" />
@@ -40,9 +40,9 @@
         android:id="@+id/button_my_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="142dp"
+        android:layout_marginTop="350dp"
         android:background="#2f5cff"
         android:text="내 정보"
         android:textColor="@android:color/background_light" />

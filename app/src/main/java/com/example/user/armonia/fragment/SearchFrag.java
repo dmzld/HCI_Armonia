@@ -137,6 +137,8 @@ public class SearchFrag extends Fragment {
             }
         });
 
+
+        //$category = $_POST['category'];
         btnStudy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
