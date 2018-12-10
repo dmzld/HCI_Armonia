@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
 
                 //최초인증에서 db에 저장
-                showData(femail,fuser);
+                //showData(femail,fuser);
 
 
 
@@ -216,7 +216,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
 
                             //최초인증에서 db에 저장
-                            showData(user.getEmail(),user.getDisplayName());
+                            //showData(user.getEmail(),user.getDisplayName());
 
                             //로그인 id 넘겨주어야 됨
                             intent.putExtra("email",user.getEmail());
