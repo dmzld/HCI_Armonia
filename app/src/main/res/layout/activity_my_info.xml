@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MyInfoActivity"
+    android:background="#FFFFFF"
     tools:layout_editor_absoluteY="25dp">
 
     <FrameLayout
@@ -24,7 +25,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/myinfoLayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="200dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         app:layout_constraintBottom_toTopOf="@+id/frameLayout"
@@ -42,7 +43,7 @@
             app:layout_constraintEnd_toStartOf="@+id/modify"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_outline_face_24px" />
+            app:srcCompat="@drawable/myinfo" />
 
         <TextView
             android:id="@+id/myinfoid"
@@ -50,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="192dp"
             android:layout_marginTop="28dp"
-            android:text="id"
+            android:text="ID"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/myinfoimg"
@@ -61,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="name"
+            android:text="이름"
             app:layout_constraintStart_toStartOf="@+id/myinfoid"
             app:layout_constraintTop_toBottomOf="@+id/myinfoid" />
 
@@ -74,6 +75,7 @@
             android:text="수정하기"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
+            android:background="@drawable/buttonshape"
             app:layout_constraintStart_toEndOf="@+id/myinfoimg"
             app:layout_constraintTop_toBottomOf="@+id/myinfoname" />
 
@@ -96,7 +98,7 @@
 
         <ImageView
             android:id="@+id/changeimg"
-            android:layout_width="92dp"
+            android:layout_width="94dp"
             android:layout_height="94dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
@@ -104,24 +106,49 @@
             app:srcCompat="@drawable/ic_outline_face_24px"
             tools:weight="1" />
 
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/changeimg"
+            android:layout_centerHorizontal="true"
+            android:text="프로필 사진 바꾸기"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
         <ImageView
             android:id="@+id/changepwd"
-            android:layout_width="98dp"
-            android:layout_height="103dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/changeimg"
-            android:layout_marginBottom="96dp"
-            app:srcCompat="@android:drawable/ic_lock_lock" />
+            android:layout_width="94dp"
+            android:layout_height="94dp"
+            android:layout_centerInParent="true"
+            app:srcCompat="@drawable/ic_outline_lock_24px" />
 
         <ImageView
             android:id="@+id/back"
-            android:layout_width="142dp"
-            android:layout_height="51dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="19dp"
-            android:layout_marginStart="-43dp"
-            android:layout_toEndOf="@+id/changeimg"
-            app:srcCompat="@drawable/back" />
+            android:layout_width="94dp"
+            android:layout_height="94dp"
+            android:layout_below="@+id/textView18"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/ic_outline_back_24px" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/changepwd"
+            android:layout_centerHorizontal="true"
+            android:text="비밀번호 바꾸기"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/back"
+            android:layout_centerHorizontal="true"
+            android:text="뒤로가기"
+            android:textSize="18sp" />
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

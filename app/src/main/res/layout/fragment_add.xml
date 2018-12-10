@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="330dp"
         android:background="@drawable/buttonshape"
         android:text="동아리 생성" />
 
@@ -28,9 +29,9 @@
         android:id="@+id/button_make_union"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/button_make_club"
+        android:layout_marginEnd="30dp"
         android:background="@drawable/buttonshape"
         android:text="연합 생성" />
 
@@ -38,10 +39,36 @@
         android:id="@+id/button_my_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="350dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/button_make_club"
+        android:layout_marginStart="33dp"
         android:background="@drawable/buttonshape"
         android:text="내 정보" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="221dp"
+        android:src="@drawable/club" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/button_my_info"
+        android:layout_alignTop="@+id/imageView"
+        android:src="@drawable/myinfo" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="22dp"
+        android:src="@drawable/union" />
 
 </RelativeLayout>

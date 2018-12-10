@@ -80,13 +80,16 @@ public class MyClubFrag extends Fragment {
 
         listClubView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
                 Intent intent = new Intent(getActivity(), ClubPageActivity.class);
                 //db로 클릭한 동아리 정보를 같이 건네서 해당 동아리 페이지로 가야함
                 //지금은 일단 그냥 클럽 액티비티로
                 intent.putExtra("email",email);
                 intent.putExtra("user",user);
+                intent.putExtra("clubName",listClubArrayList.get(position).getClub_name());
+                intent.putExtra("clubCategory",listClubArrayList.get(position).getClub_category());
+
                 startActivity(intent);
             }
         });
