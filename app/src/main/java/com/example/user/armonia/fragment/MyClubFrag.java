@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,7 +77,7 @@ public class MyClubFrag extends Fragment {
             email=getArguments().getString(curEmail);
             user=getArguments().getString(curUser);
         }
-
+        Log.i("username1","username : "+user);
         listClubView = (ListView)view.findViewById(R.id.list_myClub);
         listClubArrayList = new ArrayList<ListClub>();
 
@@ -100,6 +101,7 @@ public class MyClubFrag extends Fragment {
 
 
 
+        Log.i("username2",user);
         //주소
         getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/myClubFrag.php",user);
 
