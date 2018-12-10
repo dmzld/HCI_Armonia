@@ -88,7 +88,7 @@ public class ClubBoardFrag extends Fragment {
         postArrayList = new ArrayList<ListPost>();
 
         textClubBoard = (TextView)view.findViewById(R.id.textClubBoard);
-        textClubBoard.setText(clubName+" 공지사항");
+        textClubBoard.setText(clubName+" 자유게시판");
 
         btnWrite = (Button)view.findViewById(R.id.btnWrite);
         btnWrite.setOnClickListener(new View.OnClickListener() {
