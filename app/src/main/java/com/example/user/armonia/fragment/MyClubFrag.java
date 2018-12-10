@@ -104,6 +104,7 @@ public class MyClubFrag extends Fragment {
             JSONObject jsonObj = new JSONObject(myJSON);
             list = jsonObj.getJSONArray(TAG_RESULTS);
 
+            listClubArrayList.clear();
             for (int i = 0; i < list.length(); i++) {
                 JSONObject c = list.getJSONObject(i);
                 //image

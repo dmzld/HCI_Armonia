@@ -46,14 +46,15 @@ public class AdapterListPost extends BaseAdapter {
         if(convertView==null){
             convertView = LayoutInflater.from(context).inflate(R.layout.item_post,null);
 
-            post_Date = (TextView)convertView.findViewById(R.id.post_Date);
-            post_Name = (TextView)convertView.findViewById(R.id.post_Name);
-            post_Title= (TextView)convertView.findViewById(R.id.post_Title);
-
-            post_Date.setText(listPostArrayList.get(position).getPost_Date());
-            post_Name.setText(listPostArrayList.get(position).getPost_Name());
-            post_Title.setText(listPostArrayList.get(position).getPost_Title());
         }
+
+        post_Date = (TextView)convertView.findViewById(R.id.post_Date);
+        post_Name = (TextView)convertView.findViewById(R.id.post_Name);
+        post_Title= (TextView)convertView.findViewById(R.id.post_Title);
+
+        post_Date.setText(listPostArrayList.get(position).getPost_Date());
+        post_Name.setText(listPostArrayList.get(position).getPost_Name());
+        post_Title.setText(listPostArrayList.get(position).getPost_Title());
         return convertView;
     }
 }
