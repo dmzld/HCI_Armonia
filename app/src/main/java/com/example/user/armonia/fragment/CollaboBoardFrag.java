@@ -21,12 +21,24 @@ import java.util.ArrayList;
 
 public class CollaboBoardFrag extends Fragment {
 
+    static String curEmail="curEmail";
+    static String curUser="curUser";
+    String email;
+    String user;
+
+    public static CollaboBoardFrag newInstance(String email, String user) {
+        CollaboBoardFrag collaboBoardFrag = new CollaboBoardFrag();
+        Bundle args = new Bundle();
+        args.putString(curEmail,email);
+        args.putString(curUser,user);
+        collaboBoardFrag.setArguments(args);
+        return collaboBoardFrag;
+    }
+
     Button btnWrite;
     ListView listCollaView;
     AdapterListPost adapterListColla;
     ArrayList<ListPost> collaArrayList;
-
-    public static CollaboBoardFrag newInstance() { return new CollaboBoardFrag(); }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

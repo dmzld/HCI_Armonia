@@ -56,9 +56,18 @@ public class SearchFrag extends Fragment {
     private static final String TAG_category = "Category";
     JSONArray list = null;
 
+    static String curEmail="curEmail";
+    static String curUser="curUser";
+    String email;
+    String user;
 
-    public static SearchFrag newInstance() {
-        return new SearchFrag();
+    public static SearchFrag newInstance(String email, String user) {
+        SearchFrag searchFrag = new SearchFrag();
+        Bundle args = new Bundle();
+        args.putString(curEmail,email);
+        args.putString(curUser,user);
+        searchFrag.setArguments(args);
+        return searchFrag;
     }
 
     ListView listClubView;
@@ -104,7 +113,7 @@ public class SearchFrag extends Fragment {
         btnAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                category = "0";
+
                 getData("http://ec2-52-79-235-82.ap-northeast-2.compute.amazonaws.com/armonia/searchAllClub.php",category);
             }
         });
@@ -177,9 +186,10 @@ public class SearchFrag extends Fragment {
                 ListClub lists = new ListClub(R.mipmap.ic_launcher, clubName, category);
                 listClubArrayList.add(lists);
             }
-            
+
             adapaterListClub = new AdapterListClub(getActivity(), listClubArrayList);
             listClubView.setAdapter(adapaterListClub);
+
            adapaterListClub.notifyDataSetChanged();
 
 

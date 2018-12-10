@@ -44,6 +44,7 @@ public class ClubBoardFrag extends Fragment {
     private static final String TAG_title = "Title";
     private static final String TAG_name = "User";
     private static final String TAG_date = "Date";
+    private static final String TAG_content = "Content";
     JSONArray list = null;
 
     @Override
@@ -70,11 +71,13 @@ public class ClubBoardFrag extends Fragment {
 
         listPostView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
                 Intent intent = new Intent(getActivity(), PostActivity.class);
-                //지금은 일단 그냥 클럽 액티비티로
-                //intent.putExtra();
+                intent.putExtra("title",postArrayList.get(position).getPost_Title());
+                intent.putExtra("date",postArrayList.get(position).getPost_Date());
+                intent.putExtra("name",postArrayList.get(position).getPost_Name());
+                intent.putExtra("content",postArrayList.get(position).get)
                 startActivity(intent);
             }
         });
@@ -95,6 +98,7 @@ public class ClubBoardFrag extends Fragment {
                 String title = c.getString(TAG_title);
                 String name = c.getString(TAG_name);
                 String date = c.getString(TAG_date);
+                String content = c.getString(TAG_content);
                 ListPost clubPost = new ListPost(title,name,date);
                 postArrayList.add(clubPost);
             }

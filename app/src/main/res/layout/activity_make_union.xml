@@ -11,7 +11,7 @@
         android:layout_width="80dp"
         android:layout_height="20dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:text="연합명" />
 
     <EditText
@@ -19,20 +19,37 @@
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginLeft="110dp"
-        android:layout_marginTop="10dp"
-        android:hint="연합명"
+        android:layout_marginTop="40dp"
+        android:hint="연합 이름"
         android:inputType="text" />
 
     <TextView
         android:id="@+id/textView2"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="100dp"
+        android:text="연합 회장이름" />
+
+    <EditText
+        android:id="@+id/president_name"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="90dp"
+        android:hint="회장 이름"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="120dp"
         android:layout_height="20dp"
         android:layout_marginLeft="140dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="160dp"
         android:text="소속 동아리" />
 
     <LinearLayout
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="190dp"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_marginLeft="90dp">
@@ -43,56 +60,23 @@
         </Spinner>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="120dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="150dp"
-        android:text="연합할 동아리" />
-
-    <LinearLayout
-        android:layout_marginTop="180dp"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="90dp">
-        <Spinner
-            android:id="@+id/add_union"
-            android:layout_width="200dp"
-            android:layout_height="40dp">
-        </Spinner>
-    </LinearLayout>
-
-<!--    <Button
-        android:id="@+id/btnAdd"
-        android:layout_width="70dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="245dp"
-        android:background="@drawable/buttonshape"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
-        android:text="+"
-        android:textColor="#FFFFFF"
-        android:textSize="30dp"
-        />-->
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="120dp"
         android:layout_height="20dp"
         android:layout_marginLeft="160dp"
-        android:layout_marginTop="300dp"
-        android:text="연합 설명" />
+        android:layout_marginTop="250dp"
+        android:text="연합 동아리 명" />
 
     <EditText
         android:id="@+id/union_content"
         android:layout_width="350dp"
-        android:layout_height="150dp"
+        android:layout_height="180dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="330dp"
+        android:layout_marginTop="280dp"
+        android:hint= "연합할 동아리를 쓰시오"
+        android:textColorHint="#000000"
         android:inputType="textMultiLine"
         android:background="@drawable/edge" />
 

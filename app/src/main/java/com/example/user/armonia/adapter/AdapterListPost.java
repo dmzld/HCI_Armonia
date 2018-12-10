@@ -21,6 +21,7 @@ public class AdapterListPost extends BaseAdapter {
     TextView post_Name;
     TextView post_Date;
 
+
     public AdapterListPost(Context context, ArrayList<ListPost> listPostArrayList) {
         this.context = context;
         this.listPostArrayList = listPostArrayList;
