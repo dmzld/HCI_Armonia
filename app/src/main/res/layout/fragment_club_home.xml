@@ -52,6 +52,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="19dp"
-        android:text="안녕하세요 저희는 ~ 동아리입니다. 어쩌구 저쩌구" />
+        android:text="안녕하세요 저희는 ~ 동아리입니다. " />
 
 </RelativeLayout>

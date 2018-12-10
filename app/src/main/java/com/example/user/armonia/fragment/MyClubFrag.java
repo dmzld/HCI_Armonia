@@ -56,6 +56,7 @@ public class MyClubFrag extends Fragment {
     private static final String TAG_RESULTS = "result";
     private static final String TAG_clubName = "ClubName";
     private static final String TAG_category = "Category";
+    private static final String TAG_clubInfo = "ClubInfo";
 
     JSONArray list = null;
 
@@ -89,6 +90,7 @@ public class MyClubFrag extends Fragment {
                 intent.putExtra("user",user);
                 intent.putExtra("clubName",listClubArrayList.get(position).getClub_name());
                 intent.putExtra("clubCategory",listClubArrayList.get(position).getClub_category());
+                intent.putExtra("clubInfo",listClubArrayList.get(position).getClub_info());
 
                 startActivity(intent);
             }
@@ -113,7 +115,8 @@ public class MyClubFrag extends Fragment {
                 //image
                 String clubName = c.getString(TAG_clubName);
                 String category = c.getString(TAG_category);
-                ListClub myClub = new ListClub(R.mipmap.ic_launcher,clubName,category);
+                String clubInfo = c.getString(TAG_clubInfo);
+                ListClub myClub = new ListClub(R.mipmap.ic_launcher,clubName,category,clubInfo);
                 listClubArrayList.add(myClub);
             }
             adapterListClub_my = new AdapterListClub(getActivity(),listClubArrayList);

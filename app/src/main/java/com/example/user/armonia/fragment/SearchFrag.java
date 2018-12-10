@@ -55,6 +55,7 @@ public class SearchFrag extends Fragment {
 
     private static final String TAG_clubName = "ClubName";
     private static final String TAG_category = "Category";
+    private static final String TAG_clubInfo = "ClubInfo";
 
     AdapterListClub myListAdapter;
     ArrayList<ListClub> list_clubArrayList;
@@ -117,6 +118,7 @@ public class SearchFrag extends Fragment {
                 intent.putExtra("user",user);
                 intent.putExtra("clubName", listClubArrayList.get(position).getClub_name());
                 intent.putExtra("clubCategory",listClubArrayList.get(position).getClub_category());
+                intent.putExtra("clubInfo",listClubArrayList.get(position).getClub_info());
                 startActivity(intent);
             }
         });
@@ -197,8 +199,9 @@ public class SearchFrag extends Fragment {
 
                 String clubName = c.getString(TAG_clubName);
                 String category = c.getString(TAG_category);
+                String clubInfo = c.getString(TAG_clubInfo);
 
-                ListClub lists = new ListClub(R.mipmap.ic_launcher, clubName, category);
+                ListClub lists = new ListClub(R.mipmap.ic_launcher, clubName, category,clubInfo);
                 listClubArrayList.add(lists);
             }
 
